@@ -9,12 +9,18 @@
 @font-face {
 	font-family: QuicksandBold;
 	src: url(../fonts/quicksand/Quicksand-Bold.otf);
-}	
+}
+
+@font-face {
+	font-family: BrushScript;
+	src: url(../fonts/brushscript.ttf);
+}
 
 /** General **/
 * {
 	font-family: QuicksandRegular;
 	font-size: 1.0rem;
+	color: white;
 	margin: 0;
 	padding: 0;
 }
@@ -32,12 +38,12 @@
 /** Section 1 **/
 
 #section_1 {
-	background-image: url(../images/sb_lake.jpg);
+	background-image: url(../images/sb_sky_bw.jpg);
 	background-size: 100% 700px;
 }
 
 #name {
-  font-family: "Brush Script MT", cursive;
+  font-family: BrushScript;
   font-size: 50px;
   font-weight: bold;
 }
