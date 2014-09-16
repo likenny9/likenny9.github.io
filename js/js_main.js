@@ -21,5 +21,19 @@ $(document).ready(function() {
 				scrollTop : $("#section_5").offset().top
 			}, 700);
 		});
+		$("#top_button").click(function() {
+			$('html,body').animate({
+				scrollTop : $("#section_1").offset().top
+			}, 700);
+		});
 	}, 500);
+	
+	$(window).on("scroll", function() {
+			if ($(window).scrollTop() > 699) {
+				$('#top_button').css('display','block');			
+			} else {
+				$('#top_button').css('display','none');
+			}
+		});
+
 });
