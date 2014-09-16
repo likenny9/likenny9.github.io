@@ -25,6 +25,11 @@
 	padding: 0;
 }
 
+html, body {
+    height: 100%;
+    min-width: 500px;
+}
+
 /** All Sections **/
 .sections {
 	width: 100%;
@@ -33,6 +38,12 @@
 
 .main_wrapper {
 	padding: 10px;
+	position: relative;
+	left: 20%;
+	top: 25%;
+	width: 60%;
+	height: 50%;
+	border: 2px solid #000;
 }
 
 /** Section 1 **/
@@ -44,10 +55,25 @@
 
 #name {
   font-family: BrushScript;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
 }
 
+#major_school {
+	font-family: QuicksandRegular;
+	font-size: 20px;
+}
+
+#name_intro {
+	text-align: center;
+	border: 2px solid #000000;
+}
+
+#buttons_intro {
+	margin-top: 10px;
+	text-align: center;	
+	border: 2px solid #000;
+}
 
 .button_style {
 	font-size: 1rem;
