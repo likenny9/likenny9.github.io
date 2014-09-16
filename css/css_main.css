@@ -16,6 +16,11 @@
 	src: url(../fonts/brushscript.ttf);
 }
 
+@font-face {
+	font-family: RalewayBold;
+	src: url(../fonts/Raleway-Bold.otf);
+}
+
 /** General **/
 * {
 	font-family: QuicksandRegular;
@@ -27,7 +32,7 @@
 
 html, body {
     height: 100%;
-    min-width: 500px;
+    min-width: 695px;
 }
 
 /** All Sections **/
@@ -36,14 +41,15 @@ html, body {
 	height: 700px;
 }
 
-.main_wrapper {
-	padding: 10px;
-	position: relative;
-	left: 20%;
-	top: 25%;
-	width: 60%;
-	height: 50%;
-	border: 2px solid #000;
+.heading_wrapper {
+	text-align: center;
+	-border: 2px solid #000;
+}
+
+.heading_wrapper p {
+	font-family: RalewayBold;
+	font-size: 3rem;
+	color: #F4851C
 }
 
 /** Section 1 **/
@@ -51,6 +57,16 @@ html, body {
 #section_1 {
 	background-image: url(../images/sb_sky_bw.jpg);
 	background-size: 100% 700px;
+}
+
+
+#main_wrapper_1 {
+	padding: 10px;
+	position: relative;
+	left: 20%;
+	top: 25%;
+	width: 60%;
+	height: 50%;
 }
 
 #name {
@@ -66,13 +82,11 @@ html, body {
 
 #name_intro {
 	text-align: center;
-	border: 2px solid #000000;
 }
 
 #buttons_intro {
 	margin-top: 10px;
 	text-align: center;	
-	border: 2px solid #000;
 }
 
 .button_style {
@@ -114,23 +128,62 @@ html, body {
 }
 
 
-/**
-.light_orange.button_style {
-	color: #F4851C;
-}
-
-.dark_orange.button_style {
-	color: #FF5C00;
-}
-*/
+/** Section 2 **/
 
 #section_2 {
 	background-image: url(../images/bluebg.png);
 	background-size: 100% 700px;
 }
 
+#main_wrapper_2 {
+	padding: 10px;
+	position: relative;
+	left: 10%;
+	top: 5%;
+	width: 80%;
+	height: 90%;
+	-border: 2px solid #000;
+}
+
+#about_text {
+	width: 45%;
+	height: 550px;
+	margin: 2%;
+	float: left;
+	display: table;
+	-border: 2px solid #000;
+}
+
+#about_text p {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#about_img {
+	height: 550px;
+	width: 45%;
+	margin: 2%;
+	float: left;
+	text-align: center;
+	-border: 2px solid #000;
+}
+
 #section_3 {
 	background-color: #AAAAAA;
+}
+
+#main_wrapper_3 {
+	padding: 10px;
+	position: relative;
+	left: 10%;
+	top: 5%;
+	width: 80%;
+	height: 90%;
+	border: 2px solid #000;
+}
+
+#heading_wrapper_3 p {
+	color: #B55A04;
 }
 
 #section_4 {
