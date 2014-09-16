@@ -113,6 +113,7 @@ html, body {
 	background: -moz-linear-gradient(0% 90% 90deg, #4195DD, #003C82);
 }
 
+
 /**
 .light_orange.button_style {
 	color: #F4851C;
@@ -125,6 +126,7 @@ html, body {
 
 #section_2 {
 	background-image: url(../images/bluebg.png);
+	background-size: 100% 700px;
 }
 
 #section_3 {
@@ -133,6 +135,7 @@ html, body {
 
 #section_4 {
 	background-image: url(../images/bluebg.png);
+	background-size: 100% 700px;
 }
 
 #section_5 {
