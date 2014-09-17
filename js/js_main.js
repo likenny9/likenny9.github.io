@@ -16,9 +16,14 @@ $(document).ready(function() {
 				scrollTop : $("#section_4").offset().top
 			}, 700);
 		});
-		$("#contact_button").click(function() {
+		$("#work_button").click(function() {
 			$('html,body').animate({
 				scrollTop : $("#section_5").offset().top
+			}, 700);
+		});
+		$("#contact_button").click(function() {
+			$('html,body').animate({
+				scrollTop : $("#section_6").offset().top
 			}, 700);
 		});
 		$("#top_button").click(function() {

@@ -47,6 +47,18 @@ noscript {
 	color: orange;
 }
 
+a {
+  color: blue;
+}
+
+a:visited{
+   color: purple;
+}
+
+a:active {
+   color: red;
+}
+
 /******************/
 /** All Sections **/
 
@@ -101,17 +113,18 @@ noscript {
 #main_wrapper_1 {
 	padding: 10px;
 	position: relative;
-	left: 20%;
+	left: 14%;
 	top: 25%;
-	width: 60%;
+	width: 70%;
 	height: 50%;
 	text-align: center;
+	-border: 2px solid black;
 }
 
 #name {
-  font-family: BrushScript;
-  font-size: 60px;
-  font-weight: bold;
+  	font-family: BrushScript;
+  	font-size: 60px;
+  	font-weight: bold;
 }
 
 #major_school {
@@ -126,6 +139,7 @@ noscript {
 #buttons_intro {
 	margin-top: 10px;
 	text-align: center;	
+	-border: 2px solid black;
 }
 
 .button_style {
@@ -133,7 +147,8 @@ noscript {
 	color: #000000;
 	text-decoration: none;
 	display: inline-block;
-	width: 100px;
+	width: 90px;
+	height: 50px;
 	padding: 10px;
 	border: 2px solid #DDD;
 	text-align: center;
@@ -383,11 +398,13 @@ noscript {
 	font-size: 0.85rem;
 }
 
+
 /***************/
 /** SECTION 5 **/
 
 #section_5 {
 	background-color: #999999;
+	
 }
 
 #main_wrapper_5 {
@@ -404,14 +421,78 @@ noscript {
 	color: #B55A04;
 }
 
+#work_wrapper {
+	width: 100%;
+	height: 90%;
+	-border: 2px solid #000;
+}
+
+.work_name {
+  	margin-top: 1%;
+  	width: 540px;
+  	font-size: 29px;
+  	font-weight: bold;
+  	-border: 2px solid #000;
+}
+
+.work_text {
+	width: 60%;
+	max-width: 650px;
+	height: 200px;
+	margin-top: 1%;
+	-border: 2px solid #000;
+}	
+
+.work_text p{
+	font-size: 0.85rem;
+}
+
+.work_sidebar {
+	float: right;
+	margin-top: 1%;
+	margin-right: 1%;
+	width: 240px;
+	-border: 2px solid black;
+}
+
+.work_sidebar_desc {
+	font-size: 0.85rem;
+}
+
+.work_pictures {
+	border-color: #F4851C;
+	border-radius: 10px;
+	border-width: 3px;
+	border-style: solid;
+	box-shadow: 0px 0px 10px #000 inset;
+}
+
+/***************/
+/** SECTION 6 **/
+
+#section_6 {
+	background-image: url(../images/bluebg.png);
+	background-size: 100% 700px;
+}
+
+#main_wrapper_6 {
+	padding: 10px;
+	position: relative;
+	left: 5%;
+	top: 5%;
+	width: 90%;
+	height: 90%;
+	-border: 2px solid #000;
+}
+
 #contact_title {
 	font-size: 45px;
 	font-weight: bold;
 	font-family: Charcoal;
 	text-align: center;
 	margin-top: 8%;
-	color: #4169E1;
-	text-shadow: 0px 0px 30px #A0C4FF;
+	color: #41C0FF;
+	text-shadow: 0px 0px 30px #A0C4DD;
 	-border: 2px solid black;
 }
 
@@ -440,15 +521,15 @@ noscript {
 }
 
 /***************/
-/** SECTION 6 **/
-#section_6 {
+/** SECTION 7 **/
+#section_7 {
 	width: 100%;
 	height: 20px;
-	background-image: url(../images/bluebg.png);
+	background-color: #999999;
 	background-size: 100% 50px;
 }
 
-#main_wrapper_6 {
+#main_wrapper_7 {
 	padding: 0px;
 	position: relative;
 	left: 10%;
@@ -460,5 +541,7 @@ noscript {
 
 #copyright {
 	padding-top: 2px;
-	font-size: 0.6rem;
+	font-family: Charcoal;
+	font-size: 0.65rem;
+	letter-spacing: 2px;
 }
