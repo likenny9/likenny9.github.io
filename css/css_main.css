@@ -230,7 +230,7 @@ html, body {
 }
 
 #school_coursework {
-	width: 70%;
+	width: 60%;
 	height: 250px;
 	float: left;	
 	-border: 2px solid #000;
@@ -238,6 +238,7 @@ html, body {
 
 #cs_coursework {
 	width: 45%;
+	max-width: 300px;
 	height: 95%;
 	font-size: 0.85rem;
 	margin-left: 3%;
@@ -252,6 +253,7 @@ html, body {
 
 #ms_coursework {
 	width: 45%;
+	max-width: 300px;
 	height: 95%;
 	font-size: 0.85rem;
 	margin-left: 3%;
