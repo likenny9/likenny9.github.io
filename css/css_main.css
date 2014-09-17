@@ -231,6 +231,7 @@ html, body {
 
 #school_coursework {
 	width: 60%;
+	max-width: 650px;
 	height: 250px;
 	float: left;	
 	border: 2px solid #000;
@@ -243,7 +244,7 @@ html, body {
 	font-size: 0.85rem;
 	margin-left: 3%;
 	float: left;
-	-border: 2px solid black;
+	border: 2px solid black;
 }
 
 #cs_coursework span {
