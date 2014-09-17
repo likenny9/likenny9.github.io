@@ -217,7 +217,8 @@ html, body {
 }
 
 #school_text {
-	width: 70%;
+	width: 60%;
+	max-width: 650px;
 	height: 200px;
 	margin-top: 1%;
 	float: left;	
