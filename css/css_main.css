@@ -347,6 +347,10 @@ noscript {
 	float: left;
 }
 
+#tech_wrapper_2 {
+	margin-right: 5%;
+}
+
 #tech_skills_text {
 	width: 100%;
 	max-width: 700px;
