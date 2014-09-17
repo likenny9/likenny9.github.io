@@ -14,7 +14,8 @@
 	
 		<div class="sections" id="section_1">
 			<div id="main_wrapper_1">
-				<button class="button_style" id="top_button"><p>^ Top</p></button>
+				<noscript>WARNING <br>Javascript not found. <br> For best experience, enable javascript.</noscript>
+				<button class="button_style" id="top_button"><span>^ Top</span></button>
 				<div id="name_intro">
 					<p id="name">Kenny Li</p>
 					<p id="major_school">
@@ -42,7 +43,9 @@
           			Science as well as a BS in Management Science. 
           			<br><br>
           			Please feel free to browse my site and check out all the information
-          			I have available. If you see anything that catches your eye or just
+          			I have available. Further information can be found on my LinkedIn page
+          			(link in contact information) as well as on my resume (given upon request).
+          			If you see anything that catches your eye or just
           			have general inquiries, let me know - I would enjoy your message.</p>
 				</div>
 				
@@ -61,7 +64,7 @@
 					<div id="school_name">University of California, San Diego</div>
 					<div id="school_sidebar">
       					<a href="http://www.ucsd.edu/" target="_blank">
-        					<img id="ucsd_picture" src="./images/ucsdbanner.png" alt="UCSD Logo" title="UC San Diego" height="41" width="175">
+        					<img id="ucsd_picture" src="./images/ucsdbanner_white.png" alt="UCSD Logo" title="UC San Diego" height="41" width="175">
       					</a>
       					<div id="school_sidebar_desc">
         					Computer Science B.S.<br>Mangement Science B.S.<br>Est Graduation: Jun 2016<br>GPA: 3.35
@@ -102,6 +105,49 @@
 		</div> <!-- Section wrapper -->
 		
 		<div class="sections" id="section_4">
+			<div id="main_wrapper_4">
+				<div class="heading_wrapper" id="heading_wrapper_4">
+					<p id="coding_name">Coding and Projects</p>
+				</div>
+				<div id="coding_wrapper">
+					<div class="coding_heading">Technical Skills</div>
+      				<div id="tech_skills_text"> 
+      					<p>
+      						<span class="tech_skills_header">Computer Languages</span><br>
+      							 C | C++ | C# | Java | HTML | CSS | JavaScript | SQL  <br>
+							<span class="tech_skills_header">Computer Tools/Technologies</span><br>
+								 Vim | Git | Eclipse | JUnit | JIRA | ADT | PostgreSQL | Visual Studio | SQL Server <br>
+							<span class="tech_skills_header">Miscellaneous Software</span><br>
+								 MS Access | Active Directory <br>
+							<span class="tech_skills_header">Computer Techniques</span><br>
+								 Agile Software Development | Model View Controller <br>
+							<span class="tech_skills_header">Operating Systems</span><br>
+								 Windows | Mac OS X | Unix 
+        				</p>
+      				</div>
+      				<div class="coding_heading">Projects</div>
+      				<div id="projects_text"> 
+      					<p>
+      						<span class="tech_skills_header">College Web System > CSE 136 - Enterprise Web Apps</span><br>
+      							 College-level web system consisting of accounts, courses, schedules, enrollments, grading. <br>
+      							 Languages+Tools = C#, SQL, HTML, JavaScript (Ajax, knockout) + Visual Studio, SQL Server <br>
+							<span class="tech_skills_header">Browser Meme Organizer > CSE 134B - Client Web Apps</span><br>
+								 Browser-based meme collector and organizer. &nbsp;
+								 <a href="http://acsweb.ucsd.edu/~k3li/CSE134B/project-1-mememaster/">VIEW</a> <br>
+								 Languages+Tools = HTML, CSS, JavaScript (Ajax, IndexedDB) <br>
+							<span class="tech_skills_header">Shopping Analytics App > CSE 135 - Server Web Apps</span><br>
+								 Analytics application that maximizes database efficiency of sales products and figures. <br>
+								 Languages+Tools = JSP, SQL, HTML + PostgreSQL, Tomcat, Eclipse <br>
+							<span class="tech_skills_header">Android Place-Its App > CSE 110 - Software Engineering</span><br>
+								 Located-based post-it Android application with proximity-triggered notifications &nbsp;
+								 <a href="./coding/Team22PlaceIts.apk">APK</a><br>
+								 Note: Needs GPS and network connection to work. <br>
+								 Languages+Tools = Java, XML + Eclipse (Android ADT), Google App Engine
+								 
+        				</p>
+      				</div>
+      			</div>
+			</div>
 		</div>
 		
 		<div class="sections" id="section_5">
@@ -114,15 +160,15 @@
 					Feel free to send me inquiries, comments, suggestions, or questions.
 				</div>
 				<div id="contact_links">
-      				<table width=100% ><tr><td>
+      				<table id="contact_table"><tr><td>
        					<a class="ucsdmail" href="mailto:k3li@ucsd.edu"><img src="./images/emailicon.png" 
-       								 alt="k3li@ucsd.edu" width=50px height=50px></a>
+       								 alt="k3li@ucsd.edu" width=50 height=50></a>
        					<a href="mailto:likenny9@gmail.com"><img src="./images/gmailicon.png" 
-       								 alt="likenny9@gmail.com" width=50px height=50px></a>
+       								 alt="likenny9@gmail.com" width=50 height=50></a>
        					<a href="http://www.facebook.com/KennyLixD" target="_blank">
-       								 <img src="./images/facebookicon.png" alt="Facebook" width=50px height=50px></a>           
+       								 <img src="./images/facebookicon.png" alt="Facebook" width=50 height=50></a>           
        					<a href="http://www.linkedin.com/in/likenny/" target="_blank">
-       								 <img src="./images/linkedinicon.png" alt="LinkedIn" width=50px height=50px></a>
+       								 <img src="./images/linkedinicon.png" alt="LinkedIn" width=50 height=50></a>
        					<p id="emailtextform">k3li@ucsd.edu<br/> likenny9@gmail.com</p>
       				</td></tr></table>                          
     			</div>
@@ -131,8 +177,21 @@
 		
 		<div id="section_6">
 			<div id="main_wrapper_6">
-				<p id="copyright">&copy 2014 - Kenny Li</p>
+				<p id="copyright">&copy; 2014 - Kenny Li</p>
 			</div>
 		</div>
+		
+		
+		<!-- Google Analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create', 'UA-44139944-2', 'auto');
+			ga('send', 'pageview');
+		</script>
+		
 	</body>
 </html>

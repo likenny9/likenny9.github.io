@@ -41,6 +41,12 @@ html, body {
     min-width: 695px;
 }
 
+noscript {
+	text-align: center;
+	font-weight: bold;
+	color: orange;
+}
+
 /******************/
 /** All Sections **/
 
@@ -71,13 +77,14 @@ html, body {
     z-index: 10000;
 }
 
-#top_button p {
+#top_button span {
 	font-size: 0.7rem; 
 	color: #000;
-	margin-top: -4px;
+	position: relative;
+	top: -5px;
 }
 
-#top_button:hover p {
+#top_button:hover span {
 	color: #FFFFFF;
 	border-color: #3278BE;
 }
@@ -98,6 +105,7 @@ html, body {
 	top: 25%;
 	width: 60%;
 	height: 50%;
+	text-align: center;
 }
 
 #name {
@@ -311,6 +319,64 @@ html, body {
 	background-size: 100% 700px;
 }
 
+#main_wrapper_4 {
+	padding: 10px;
+	position: relative;
+	left: 5%;
+	top: 5%;
+	width: 90%;
+	height: 90%;
+	-border: 2px solid #000;
+}
+
+#coding_wrapper {
+	width: 100%;
+	height: 90%;
+	-border: 2px solid #000;
+}
+
+.coding_heading {
+  margin-top: 1%;
+  width: 250px;
+  font-size: 30px;
+  font-weight: bold;
+  -border: 2px solid #000;
+}
+
+#tech_skills_text {
+	width: 100%;
+	max-width: 700px;
+	height: 200px;
+	margin-top: 1%;
+	-border: 2px solid #000;
+}
+
+#tech_skills_text p {
+	font-size: 0.9rem;
+}
+
+.tech_skills_header {
+	font-weight: bold;
+	color: #F4851C;
+}
+
+#projects_text .tech_skills_header:not(:first-child) {
+	display: inline-block;
+	padding-top: 5px;
+}
+
+#projects_text {
+	width: 100%;
+	max-width: 700px;
+	height: 240px;
+	margin-top: 1%;
+	-border: 2px solid #000;
+}
+
+#projects_text p {
+	font-size: 0.85rem;
+}
+
 /***************/
 /** SECTION 5 **/
 
@@ -361,6 +427,10 @@ html, body {
 	box-shadow: 0px 0px 30px #00FF00;
     border-radius: 25px;
     border: 0.3em solid #F4851C;
+}
+
+#contact_table {
+	width: 100%;
 }
 
 /***************/
