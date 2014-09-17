@@ -336,11 +336,15 @@ noscript {
 }
 
 .coding_heading {
-  margin-top: 1%;
-  width: 250px;
-  font-size: 30px;
-  font-weight: bold;
-  -border: 2px solid #000;
+  	margin-top: 1%;
+  	width: 250px;
+  	font-size: 30px;
+  	font-weight: bold;
+  	-border: 2px solid #000;
+}
+
+.tech_wrapper {
+	float: left;
 }
 
 #tech_skills_text {
@@ -349,6 +353,7 @@ noscript {
 	height: 200px;
 	margin-top: 1%;
 	-border: 2px solid #000;
+	float: left;
 }
 
 #tech_skills_text p {
@@ -371,6 +376,7 @@ noscript {
 	height: 240px;
 	margin-top: 1%;
 	-border: 2px solid #000;
+	float: left;
 }
 
 #projects_text p {
