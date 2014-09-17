@@ -221,7 +221,6 @@ html, body {
 	max-width: 650px;
 	height: 200px;
 	margin-top: 1%;
-	float: left;	
 	border: 2px solid #000;
 }	
 
@@ -233,7 +232,6 @@ html, body {
 	width: 60%;
 	max-width: 650px;
 	height: 250px;
-	float: left;	
 	border: 2px solid #000;
 }
 
