@@ -544,5 +544,6 @@ a:active {
 	padding-top: 2px;
 	font-family: Charcoal;
 	font-size: 0.65rem;
+	line-height: 50px;
 	letter-spacing: 2px;
 }

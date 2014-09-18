@@ -3,34 +3,152 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="http://www.kenny-li.com/css/css_main.css">
+		<link rel="stylesheet" type="text/css" href="/css/css_main.css"> <!--CH-->
+		<link rel="shortcut icon" href="./icons/Kicon.ico">
 		<title>Invalid Page</title>
 		
 		<style type="text/css">
-			body {
+			html, body {
+				width: 97%;
+				height: 95%;
+				min-width: 695px;
+				margin: 0 auto;
 				background-image: url(http://www.kenny-li.com/images/bluebg.png);
-				background-size: 100% 700px;
+				background-size: 100%;
 			}
 			
-			body > div {
-				height: 100%;
+			#error_main {
+				display: table;
+				-border: 2px solid black;
 				width: 100%;
-				margin : 5px;
-				padding: 400px;
-				background-image: url(http://www.kenny-li.com/images/broken_table.gif);
-				background-repeat: no-repeat;
+				height: 65%;
+				margin: 1%;
 			}
+			
+			#error_main p, div {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			#error_main > p:first-child {
+				font-weight: bold;
+				font-size: 40px;
+			}
+			
+			#error_main > p {
+				font-size: 1.2rem;
+			}
+			
+			#table_wrapper {
+				display: block;
+				position: relative;
+			}
+			
+			#table_wrapper span {
+				display: block;
+				font-family: RalewayBold;
+				color: orange;
+				position: absolute;
+				top: 50%;
+				left: 40%;
+				font-size: 30px;
+			}
+			
+			#error_return_links {
+				display: table;
+				-border: 2px solid black;
+				width: 100%;
+				height: 20%;
+				margin: 1%;
+			}
+			
+			#error_return_links p{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			#error_link_title {
+				font-weight: bold;
+				font-size: 25px;
+				text-align: right;
+				width: 50%;
+			}
+			
+			#error_link_links {
+				text-align: left;
+				padding-left: 2%;
+				width: 50%;
+			}
+			
+			#error_link_1:hover ~ #error_link_h1 {
+				display: table-cell;
+			}
+			
+			#error_link_2:hover ~ #error_link_h2 {
+				display: table-cell;
+			}
+			
+			#error_link_h1 {
+				display: none;
+			}
+			
+			#error_link_h2 {
+				display: none;
+			}
+			
+			#error_footer {
+				display: table;
+				text-align: center;
+				width: 100%;
+				height: 17%;
+				margin: 1%;
+				-border: 2px solid black;
+			}
+			
+			#error_footer p {
+				display: table-cell;
+				vertical-align: bottom;
+			}
+			
 		</style>
 	</head>
 
 	<body>
-		<div id="404_main">
-			<h2>404 Error</h2>
-			
-			<p>ACK.<br> 
+		<div id="error_main">
+			<p>404 ERROR</p> <br>		
+			<p>ACK!<br> 
 			   What you seek does not exist! <br>
-			   Let us instead venture upon a new path. <br>
-			   To a new tomorrow  --> <a href="http://www.kenny-li.com">here</a></p>
+			   The page may have moved or it may never have existed at all. <br><br>
+			   Go to my homepage or let me know what happened.
+			</p>
+			<p>
+				<span id="table_wrapper">
+					<img src="http://www.kenny-li.com/images/broken_table.gif" alt="404 Error" width="330" height="350">
+					<span>IT BROKE!</span>
+				</span>
+			</p>
 		</div>
+		<div id="error_return_links">
+			<div id="contact_links" style="margin-top: 0;">
+				<p id="error_link_title">LINKS >></p>
+				<p id="error_link_links">
+					<a id="error_link_1" style="text-decoration: none;" href="http://www.kenny-li.com/" target="_blank">
+						<img src="/icons/Kiconthumb.ico" alt="kenny-li.com" width=50 height=50><!--CH-->
+					</a>
+					&nbsp;
+					<a id="error_link_2" style="text-decoration: none" href="mailto:likenny9@gmail.com">
+						<img src="/images/gmailicon.png" alt="likenny9@gmail.com" width=50 height=50> <!--CH-->
+					</a>
+					<br>
+					<span id="error_link_h1">kenny-li.com</span>
+					<span id="error_link_h2">likenny9@gmail.com</span>
+				</p>   
+    		</div>
+		</div>
+		
+		<div id="error_footer">
+			<p id="copyright">&copy; 2014 - Kenny Li</p>
+		</div>
+		
 	</body>
 </html>
