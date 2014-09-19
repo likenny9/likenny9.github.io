@@ -121,7 +121,7 @@ a:active {
 /*----------------------*/
 
 #section_1 {
-	background-image: url(../images/sb_sky_bw.jpg);
+	background: #525252 url(../images/sb_sky_bw.jpg);
 	background-size: 100% 700px;
 }
 
@@ -202,7 +202,7 @@ a:active {
 /*----------------------*/
 
 #section_2 {
-	background-image: url(../images/bluebg.png);
+	background: #3F4D53 url(../images/bluebg.png);
 	background-size: 100% 700px;
 }
 
@@ -349,7 +349,7 @@ a:active {
 /*----------------------*/
 
 #section_4 {
-	background-image: url(../images/bluebg.png);
+	background: #3F4D53 url(../images/bluebg.png);
 	background-size: 100% 700px;
 }
 
@@ -492,7 +492,7 @@ a:active {
 /*----------------------*/
 
 #section_6 {
-	background-image: url(../images/bluebg.png);
+	background: #3F4D53 url(../images/bluebg.png);
 	background-size: 100% 700px;
 }
 
