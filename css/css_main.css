@@ -1,3 +1,16 @@
+/*
+----------------------
+KEY
+----------------------
+Section 1 - Welcome display
+Section 2 - About
+Section 3 - Education
+Section 4 - Coding
+Section 5 - Work
+Section 6 - Contact
+Section 7 - Footer
+----------------------
+*/
 @charset "UTF-8";
 
 /** Fonts **/
@@ -48,19 +61,20 @@ noscript {
 }
 
 a {
-  color: blue;
+	color: blue;
 }
 
 a:visited{
-   color: purple;
+    color: purple;
 }
 
 a:active {
-   color: red;
+    color: red;
 }
 
-/******************/
+/*----------------------*/
 /** All Sections **/
+/*----------------------*/
 
 .sections {
 	width: 100%;
@@ -102,8 +116,9 @@ a:active {
 	border-color: #3278BE;
 }
 
-/***************/
+/*----------------------*/
 /** SECTION 1 **/
+/*----------------------*/
 
 #section_1 {
 	background-image: url(../images/sb_sky_bw.jpg);
@@ -182,8 +197,9 @@ a:active {
 	background: -moz-linear-gradient(0% 90% 90deg, #4195DD, #003C82);
 }
 
-/***************/
+/*----------------------*/
 /** SECTION 2 **/
+/*----------------------*/
 
 #section_2 {
 	background-image: url(../images/bluebg.png);
@@ -223,8 +239,9 @@ a:active {
 	-border: 2px solid #000;
 }
 
-/***************/
+/*----------------------*/
 /** SECTION 3 **/
+/*----------------------*/
 
 #section_3 {
 	background-color: #999999;
@@ -251,11 +268,11 @@ a:active {
 }
 
 #school_name {
-  margin-top: 1%;
-  width: 540px;
-  font-size: 29px;
-  font-weight: bold;
-  -border: 2px solid #000;
+	margin-top: 1%;
+	width: 540px;
+	font-size: 29px;
+	font-weight: bold;
+	-border: 2px solid #000;
 }
 
 #school_text {
@@ -327,8 +344,9 @@ a:active {
 	box-shadow: 0px 0px 10px #000 inset;
 }
 
-/***************/
+/*----------------------*/
 /** SECTION 4 **/
+/*----------------------*/
 
 #section_4 {
 	background-image: url(../images/bluebg.png);
@@ -400,8 +418,9 @@ a:active {
 }
 
 
-/***************/
+/*----------------------*/
 /** SECTION 5 **/
+/*----------------------*/
 
 #section_5 {
 	background-color: #999999;
@@ -468,8 +487,9 @@ a:active {
 	box-shadow: 0px 0px 10px #000 inset;
 }
 
-/***************/
+/*----------------------*/
 /** SECTION 6 **/
+/*----------------------*/
 
 #section_6 {
 	background-image: url(../images/bluebg.png);
@@ -521,8 +541,9 @@ a:active {
 	width: 100%;
 }
 
-/***************/
+/*----------------------*/
 /** SECTION 7 **/
+/*----------------------*/
 #section_7 {
 	width: 100%;
 	height: 20px;
