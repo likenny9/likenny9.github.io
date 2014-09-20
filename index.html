@@ -15,10 +15,26 @@
 		<script src="./js/js_main.js"></script>
 		
 		<title>Kenny Li</title>
+		
+		<!-- Style overrides when JavaScript is disabled -->
+		<noscript>
+			<style>
+
+				#main_wrapper_2 {
+					display: block !important; 
+					width: 80% !important;
+					left: 10% !important;
+				}
+				#main_wrapper_3 {
+					display: block !important; 
+					width: 90% !important;
+					left: 5% !important;
+				}
+			</style>
+		</noscript>
 	</head>
 
 	<body>
-	
 		<div class="sections" id="section_1">
 			<div id="main_wrapper_1">
 				<noscript>WARNING <br>Javascript not found. <br> For best experience, enable javascript.</noscript>
@@ -33,15 +49,16 @@
 				<div id="buttons_intro">
 					<button class="button_style" id="about_button">About</button>
 					<button class="button_style" id="education_button">Education</button>
-					<button class="button_style" id="work_button">Work</button>
 					<button class="button_style" id="coding_button">Coding</button>
+					<button class="button_style" id="work_button">Work</button>
 					<button class="button_style" id="contact_button">Contact</button>
 				</div>
 			</div>
+			<!--<div class="bounce"></div> Bounce animation-->
 		</div>
-		
-		<div class="sections" id="section_2">
-			<div id="main_wrapper_2">
+	
+		<div class="sections" id="section_2" >
+			<div id="main_wrapper_2" ><!--style="display: none; height: 0;" width: 0; left: -10;-->
 				<div class="heading_wrapper">
 					<p id="about_name">About</p>
 				</div>
@@ -64,7 +81,7 @@
 		</div>
 		
 		<div class="sections" id="section_3">
-			<div id="main_wrapper_3">
+			<div id="main_wrapper_3"> <!--style="display: none; width: 0; left: 100%;"-->
 				<div class="heading_wrapper" id="heading_wrapper_3">
 					<p id="education_name">Education</p>
 				</div>
@@ -247,7 +264,7 @@
 		
 		
 		<!-- Google Analytics -->
-		<script>
+		<!--<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -255,7 +272,7 @@
 			ga('create', 'UA-44139944-2', 'auto');
 			ga('require', 'displayfeatures');
 			ga('send', 'pageview');
-		</script>
+		</script>-->
 		
 	</body>
 </html>
