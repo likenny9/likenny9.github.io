@@ -125,36 +125,40 @@ $(document).ready(function() {
 		}
 	  wrapperLocation(currScrollTop,prevScrollTop, 200);
 		if ($(window).scrollTop() > 200 ) {
-			if(animate) {
+			console.log("animate to 1");
+			//if(animate) {
+			console.log("change opacity to 1");
 				$('#main_wrapper_2').dequeue().stop().animate({
 					opacity: 1
 					//height: percent80
 					//width: percent80,
 					//left: percent10
 					
-				}, 500, "swing");
+				}, 100, "swing");
 				/*$('#section_2').animate({
 					height: percent100
 				}, 100);
 				$('#section_2').animate({
 					height: 700
 				}, 500);*/
-			}
+			//}
 			$('#main_wrapper_2').css('display','block'); //display changes as animation starts	
 		} else {
-			if(animate) {
+			console.log("animate to 0");
+			//if(animate) {
+				console.log("change opacity to 0");
 				$('#main_wrapper_2').dequeue().stop().animate({
 					opacity: 0
 					//height: 0
 					//width: 0,
 					//left: -10
-				}, 500, "swing", function() {
+				}, 100, "swing", function() {
 					$(this).css('display','none'); //change display AFTER 1000ms
 				});
 				/*$('#section_2').animate({
 					height: 0
 				}, 500);*/
-			}
+			//}
 		}
 		/*
 		wrapperLocation(currScrollTop,prevScrollTop, 900);

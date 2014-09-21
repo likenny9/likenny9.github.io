@@ -295,6 +295,7 @@ a:active {
 }
 
 #main_wrapper_2 {
+	opacity: 0;
 	padding: 10px;
 	position: relative;
 	left: 10%;
