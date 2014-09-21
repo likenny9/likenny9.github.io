@@ -19,7 +19,9 @@
 		<!-- Style overrides when JavaScript is disabled -->
 		<noscript>
 			<style>
-
+				.buttons_intro {
+					display: none;
+				}
 				#main_wrapper_2 {
 					display: block !important; 
 					width: 80% !important;
@@ -37,8 +39,9 @@
 	<body>
 		<div class="sections" id="section_1">
 			<div id="main_wrapper_1">
-				<noscript>WARNING <br>Javascript not found. <br> For best experience, enable javascript.</noscript>
+			<!--<noscript>WARNING <br>Javascript not found. <br> For best experience, enable javascript.</noscript>-->
 				<button class="button_style" id="top_button"><span>^ Top</span></button>
+				<button class="button_style" id="button_toggle"><span><<</span></button>
 				<div id="name_intro">
 					<p id="name">Kenny Li</p>
 					<p id="major_school">
@@ -46,12 +49,19 @@
 						University of California, San Diego
 					</p>
 				</div>
-				<div id="buttons_intro">
-					<button class="button_style" id="about_button">About</button>
-					<button class="button_style" id="education_button">Education</button>
-					<button class="button_style" id="coding_button">Coding</button>
-					<button class="button_style" id="work_button">Work</button>
-					<button class="button_style" id="contact_button">Contact</button>
+				<div class="buttons_intro">
+					<button class="button_style bounce about_button">About</button>
+					<button class="button_style bounce education_button">Education</button>
+					<button class="button_style bounce coding_button">Coding</button>
+					<button class="button_style bounce work_button">Work</button>
+					<button class="button_style bounce contact_button">Contact</button>
+				</div>
+				<div class="buttons_intro" id="secondary_buttons">
+					<button class="button_style button_edit about_button">About</button>
+					<button class="button_style button_edit">Education</button>
+					<button class="button_style button_edit coding_button">Coding</button>
+					<button class="button_style button_edit work_button">Work</button>
+					<button class="button_style button_edit contact_button">Contact</button>
 				</div>
 			</div>
 			<!--<div class="bounce"></div> Bounce animation-->
@@ -243,13 +253,13 @@
 				<div id="contact_links">
       				<table id="contact_table"><tr><td>
        					<a class="ucsdmail" href="mailto:k3li@ucsd.edu"><img src="./images/emailicon.png" 
-       								 alt="k3li@ucsd.edu" width=50 height=50></a>
+       							alt="k3li@ucsd.edu" title="UCSD Email" width=50 height=50></a>
        					<a href="mailto:likenny9@gmail.com"><img src="./images/gmailicon.png" 
-       								 alt="likenny9@gmail.com" width=50 height=50></a>
+       							alt="likenny9@gmail.com" title="Gmail" width=50 height=50></a>
        					<a href="http://www.facebook.com/KennyLixD" target="_blank">
-       								 <img src="./images/facebookicon.png" alt="Facebook" width=50 height=50></a>           
+       							<img src="./images/facebookicon.png" alt="Facebook" title="Facebook" width=50 height=50></a>           
        					<a href="http://www.linkedin.com/in/likenny/" target="_blank">
-       								 <img src="./images/linkedinicon.png" alt="LinkedIn" width=50 height=50></a>
+       							<img src="./images/linkedinicon.png" alt="LinkedIn" title="LinkedIn" width=50 height=50></a>
        					<p id="emailtextform">k3li@ucsd.edu<br/> likenny9@gmail.com</p>
       				</td></tr></table>                          
     			</div>
@@ -264,7 +274,7 @@
 		
 		
 		<!-- Google Analytics -->
-		<script>
+		<!--<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -272,7 +282,7 @@
 			ga('create', 'UA-44139944-2', 'auto');
 			ga('require', 'displayfeatures');
 			ga('send', 'pageview');
-		</script>
+		</script>-->
 		
 	</body>
 </html>
