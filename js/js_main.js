@@ -36,9 +36,6 @@ $(document).ready(function() {
 	var sliderOut = true;
 	$("#button_toggle").click(function() {
 		if(sliderOut) {
-			//$('.buttons_fixed').dequeue().stop().animate({
-			//	left: 0
-			//}, 0);
 			$('.button_edit').dequeue().stop().animate({
 				width: 0
 			}, 0);
@@ -50,9 +47,6 @@ $(document).ready(function() {
 			sliderOut = false;
 		}
 		else {
-			//$('.buttons_fixed').dequeue().stop().animate({
-			//	left: 0
-			//}, 0);
 			$('.button_edit').dequeue().stop().animate({
 				width: 50
 			}, 0);
@@ -62,8 +56,7 @@ $(document).ready(function() {
 
 			$('#button_toggle span').html('&lt;&lt;');
 			sliderOut = true;
-		}
-		
+		}	
 	});
 	
 	//$('#main_wrapper_2').fadeIn(5500); examples	
@@ -83,6 +76,9 @@ $(document).ready(function() {
 	var headerTop = 220;
 	var headerMargin = 20;
 	
+	/****
+		Function ensures animation only once when passing a certain point.
+	****/
 	function wrapperLocation(curr_scroll, prev_scroll, topPixel) {
 		//scrolling down
 		if(curr_scroll > prev_scroll) {
@@ -105,10 +101,12 @@ $(document).ready(function() {
 			}
 		}
 	}
+	
 	$(window).on("scroll", function() {
 		var currScrollTop = $(this).scrollTop(); //sets scrolltop
 		var pixelsScrolled = currScrollTop - prevScrollTop;
 		
+		/**** Moves header for parallax effect ****/
 		if ($(window).scrollTop() > headerTop ) {
 			$('#main_wrapper_1').dequeue().stop().animate({
 				marginTop: headerMargin+=pixelsScrolled
@@ -123,80 +121,8 @@ $(document).ready(function() {
 				headerMargin = 20;
 			}
 		}
-	  wrapperLocation(currScrollTop,prevScrollTop, 200);
-		if ($(window).scrollTop() > 200 ) {
-			console.log("animate to 1");
-			//if(animate) {
-			console.log("change opacity to 1");
-				$('#main_wrapper_2').dequeue().stop().animate({
-					opacity: 1
-					//height: percent80
-					//width: percent80,
-					//left: percent10
-					
-				}, 100, "swing");
-				/*$('#section_2').animate({
-					height: percent100
-				}, 100);
-				$('#section_2').animate({
-					height: 700
-				}, 500);*/
-			//}
-			$('#main_wrapper_2').css('display','block'); //display changes as animation starts	
-		} else {
-			console.log("animate to 0");
-			//if(animate) {
-				console.log("change opacity to 0");
-				$('#main_wrapper_2').dequeue().stop().animate({
-					opacity: 0
-					//height: 0
-					//width: 0,
-					//left: -10
-				}, 100, "swing", function() {
-					$(this).css('display','none'); //change display AFTER 1000ms
-				});
-				/*$('#section_2').animate({
-					height: 0
-				}, 500);*/
-			//}
-		}
-		/*
-		wrapperLocation(currScrollTop,prevScrollTop, 900);
-		if ($(window).scrollTop() > 900 ) {
-			if(animate) {
-				$('#main_wrapper_3').stop(true,true);
-				$('#main_wrapper_3').animate({
-					width: percent90,
-					left: percent5
-				}, 500);
-			}
-			$('#main_wrapper_3').css('display','block'); //display changes as animation starts	
-		} else {
-			if(animate) {
-				$('#main_wrapper_3').animate({
-					width: 0,
-					left: percent100
-				}, 500, function() {
-					$(this).css('display','none'); //change display AFTER 1000ms
-				});
-			}
-		}/*
-		if ($(window).scrollTop() > 1700) {
-			$('#section_4').css('display','block');			
-		} else {
-			$('#section_4').css('display','none');
-		}
-		if ($(window).scrollTop() > 2400) {
-			$('#section_5').css('display','block');			
-		} else {
-			$('#section_5').css('display','none');
-		}
-		if ($(window).scrollTop() > 3100) {
-			$('#section_6').css('display','block');			
-		} else {
-			$('#section_6').css('display','none');
-		}*/
-		
+
+		/**** Button animation effects ****/
 		wrapperLocation(currScrollTop,prevScrollTop, 695);
 		if ($(window).scrollTop() > 695) {
 		
