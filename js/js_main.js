@@ -73,6 +73,7 @@ $(document).ready(function() {
 	});*/
 	var prevScrollTop = 0;
 	var animatedBefore = false;
+	var runElseStatement = false;
 	var animate = false;
 	var percent5 = 5 + "%";
 	var percent10 = 10 + "%";
@@ -224,18 +225,18 @@ $(document).ready(function() {
 								width: 50,
 								height: 75,
 								fontSize: 9.5 
-							}, 0);
+							}, 0, function() {
+								runElseStatement = true;
+							});
 							
 							setTimeout(function() {
-								if ($(window).scrollTop() > 695) {
-									$('#button_toggle').css('opacity','1').css('display','block');
-								}
-							}, 400);
+								$('#button_toggle').css('opacity','1').css('display','block');
+							}, 370);
 						});
 					});
 				});	
 			}
-			else if (animatedBefore) {
+			else if (animatedBefore && runElseStatement) {
 				$('#button_toggle').css('opacity','1').css('display','block');			
 			}
 			
