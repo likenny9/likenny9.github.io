@@ -328,7 +328,7 @@ a:active {
 /*----------------------*/
 
 #section_3 {
-	background-color: #999999;
+	background: #999999 url(../images/graybg.jpg);
 }
 
 #main_wrapper_3 {
@@ -339,10 +339,6 @@ a:active {
 	width: 85%;
 	height: 90%;
 	-border: 2px solid #000;
-}
-
-#heading_wrapper_3 p {
-	color: #B55A04;
 }
 
 #school_wrapper {
@@ -507,8 +503,7 @@ a:active {
 /*----------------------*/
 
 #section_5 {
-	background-color: #999999;
-	
+	background: #999999 url(../images/graybg.jpg);
 }
 
 #main_wrapper_5 {
@@ -519,10 +514,6 @@ a:active {
 	width: 85%;
 	height: 90%;
 	-border: 2px solid #000;
-}
-
-#heading_wrapper_5 p {
-	color: #B55A04;
 }
 
 #work_wrapper {
@@ -631,7 +622,7 @@ a:active {
 #section_7 {
 	width: 100%;
 	height: 20px;
-	background-color: #999999;
+	background: #999999 url(../images/graybg.jpg);
 	background-size: 100% 50px;
 }
 
