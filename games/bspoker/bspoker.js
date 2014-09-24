@@ -16,21 +16,29 @@ function initializeGame() {
 		var node = document.body.appendChild(card);
 	}*/
 
-	var welcome = new Welcome();
-	welcome.displayWelcome();
+	//var welcome = new Welcome();
+	//welcome.displayWelcome();
+	//welcome.startButton.onclick = function() {
+	//	welcome.removeWelcome();
+		new Game(5,3,1).createBoard();
+		//document.querySelector(".cardContainer").classList.toggle("flipCard"); //toggles flipping card
+	//}
+
 }
 /*-----------------------------------------------
 *******WELCOME SECTION********
 -----------------------------------------------*/
 function Welcome() {
 	//Vars
-	var welcomeWrapper, welcomeHeading, welcomeText, starButton;
+	var welcomeWrapper, welcomeHeading, welcomeText, startButton;
 }
 
 //Methods: displayWelcome, removeWelcome
 Welcome.prototype = {
+	/*-----------------
+	  Displays the welcome information.
+	  -----------------*/
 	displayWelcome: function() {
-		console.log(this);
 		this.welcomeWrapper = document.createElement("div");
 		this.welcomeWrapper.className = "welcomeWrapper";
 		
@@ -47,21 +55,181 @@ Welcome.prototype = {
 		this.startButton = document.createElement("button");
 		this.startButton.className = "startButton";
 		this.startButton.innerHTML = "Start";
-		
-		var welcomeFunction = this;
-		this.startButton.onclick = function() {
-			welcomeFunction.removeWelcome();
-			//renderGame();
-		}
-								
+				
 		this.welcomeWrapper.appendChild(this.welcomeHeading);
 		this.welcomeWrapper.appendChild(this.welcomeText);
 		this.welcomeWrapper.appendChild(this.startButton);
 		document.getElementById("gamecontainer").appendChild(this.welcomeWrapper);
 	},
 	
+	/*-----------------
+	  Removes the welcome information.
+	  -----------------*/
 	removeWelcome: function() {
 		document.getElementById("gamecontainer").removeChild(this.welcomeWrapper);
+	}
+};
+
+/*-----------------------------------------------
+*******GAME SECTION********
+-----------------------------------------------*/
+function Game(numStartCards, numComputers, difficultyLevel) {
+	//Vars
+	this.numStartCards = numStartCards;
+	this.numComputers = numComputers;
+	this.difficultyLevel = difficultyLevel;
+}
+
+//Methods - createBoard
+Game.prototype = {
+	createBoard: function() {
+		//Creates new shuffled deck of cards.
+		var deck = new Deck();
+		deck.createDeck();
+		deck.shuffleDeck(10);
+		
+		//Creates new player.
+		var player = new Player(this.numStartCards);
+		player.createPlayer();
+		
+		//Populates hand and displays it on the screen.
+		var cardLeftSpacing = 5;
+		var playerHand = new Deck();
+		for(var i = 0; i < this.numStartCards; i++) {
+			var addedCard = deck.drawCard(); //draws a card from deck
+			playerHand.addCard(addedCard); //adds the card to hand
+			
+			var addedCardWrapper = addedCard.displayCard(); //gets the card div
+			addedCardWrapper.style.left = cardLeftSpacing + "px"; //spaces cards appropriately
+			player.displayHand(addedCardWrapper); //add card to player wrapper
+			cardLeftSpacing+=80;
+		}		
+		
+		//Creates a new computer
+		var computer1 = new Computer(this.difficultyLevel);
+		computer1.createComputer();
+		computer1.computerWrapper.className+= " computer1Wrapper";
+
+		cardLeftSpacing = 5;
+		var computer1Hand = new Deck();
+		for(var i = 0; i < this.numStartCards; i++) {
+			var addedCard = deck.drawCard();
+			computer1Hand.addCard(addedCard);
+			
+			var addedCardWrapper = addedCard.displayCard();
+			addedCardWrapper.style.left = cardLeftSpacing + "px";
+			computer1.displayHand(addedCardWrapper);
+			cardLeftSpacing+=80;
+		}
+		
+		if(this.numComputers == 2 || this.numComputers == 3) {
+			var computer2 = new Computer(this.difficultyLevel);
+			computer2.createComputer();
+			computer2.computerWrapper.className+= " computer2Wrapper";
+
+			cardLeftSpacing = 13;
+			var cardTopSpacing = -5;
+			var computer2Hand = new Deck();
+			for(var i = 0; i < this.numStartCards; i++) {
+				var addedCard = deck.drawCard();
+				computer2Hand.addCard(addedCard);
+
+				var addedCardWrapper = addedCard.displayCard();
+				addedCardWrapper.style.left = cardLeftSpacing + "px";
+				addedCardWrapper.style.top = cardTopSpacing + "px";
+				rotateCards(addedCardWrapper);
+				computer2.displayHand(addedCardWrapper);
+				cardTopSpacing+=80;
+			}
+		}
+		if(this.numComputers == 3) {
+			var computer3 = new Computer(this.difficultyLevel);
+			computer3.createComputer();
+			computer3.computerWrapper.className+= " computer3Wrapper";
+
+			cardLeftSpacing = 13;
+			var cardTopSpacing = -5;
+			var computer3Hand = new Deck();
+			for(var i = 0; i < this.numStartCards; i++) {
+				var addedCard = deck.drawCard();
+				computer3Hand.addCard(addedCard);
+				
+				var addedCardWrapper = addedCard.displayCard();
+				addedCardWrapper.style.left = cardLeftSpacing + "px";
+				addedCardWrapper.style.top = cardTopSpacing + "px";
+				rotateCards(addedCardWrapper);
+				computer3.displayHand(addedCardWrapper);
+				cardTopSpacing+=80;
+			}
+		}
+		
+		console.log(deck);
+		
+		function rotateCards(wrapper) {
+			wrapper.style.webkitTransform = 'rotate('+90+'deg)'; 
+			wrapper.style.mozTransform    = 'rotate('+90+'deg)'; 
+			wrapper.style.msTransform     = 'rotate('+90+'deg)'; 
+			wrapper.style.oTransform      = 'rotate('+90+'deg)'; 
+			wrapper.style.transform       = 'rotate('+90+'deg)'; 
+		}
+	}
+
+};
+
+/*-----------------------------------------------
+*******Player SECTION********
+-----------------------------------------------*/
+function Player(numStartCards) {
+	//Vars
+	var playerWrapper;
+	this.numStartCards = numStartCards;
+}
+
+//Methods - createPlayer, displayHand
+Player.prototype = {
+	/*-----------------
+	  Creates player container.
+	  -----------------*/
+	createPlayer: function() {
+		this.playerWrapper = document.createElement("div");
+		this.playerWrapper.className = "playerWrapper";
+		//this.playerWrapper.innerHTML = "Player";
+		document.getElementById("gamecontainer").appendChild(this.playerWrapper);
+	},
+	
+	/*-----------------
+	  Shows player's card on the screen.
+	  -----------------*/
+	displayHand: function(cardWrapper) {
+		this.playerWrapper.appendChild(cardWrapper);
+	}
+};
+
+/*-----------------------------------------------
+*******Computer SECTION********
+-----------------------------------------------*/
+function Computer(difficultyLevel) {
+	//Vars
+	var computerWrapper;
+	this.difficultyLevel = difficultyLevel;
+}
+
+//Methods - createComputer
+Computer.prototype = {
+	/*-----------------
+	  Creates computer container.
+	  -----------------*/
+	createComputer: function() {
+		this.computerWrapper = document.createElement("div");
+		this.computerWrapper.className = "computerWrapper";
+		
+		document.getElementById("gamecontainer").appendChild(this.computerWrapper);
+	},
+	/*-----------------
+	  Shows computer's card on the screen.
+	  -----------------*/
+	displayHand: function(cardWrapper) {
+		this.computerWrapper.appendChild(cardWrapper);
 	}
 };
 
@@ -78,18 +246,28 @@ function Card(number, suit) {
 Card.prototype = {
 	/*-----------------
 	  Creates HTML containers and displays specified card.
+	  @returns - the entire div containing the card
 	  -----------------*/
 	displayCard: function() {
-		var cardWrapper, cardFront, cardGraphic;
+		var cardContainer, cardWrapper, cardFront, cardBack, cardGraphic, cardBackGraphic;
+		
+		cardContainer = document.createElement("div");
+		cardContainer.className = "cardContainer";
 		
 		cardWrapper = document.createElement("div");
-		cardWrapper.className = "cardContainer";
+		cardWrapper.className = "cardWrapper";
 		
 		cardFront = document.createElement("div");
 		cardFront.className = "cardFront";
 		
+		cardBack = document.createElement("div");
+		cardBack.className = "cardBack";
+		
 		cardGraphic = document.createElement("img");
-		cardGraphic.className = "face";
+		cardGraphic.className = "faceImage";
+		
+		cardBackGraphic = document.createElement("img");
+		cardBackGraphic.className = "backImage";
 		
 		switch(this.number) {
 			case "A":
@@ -252,11 +430,19 @@ Card.prototype = {
 		
 		cardFront.appendChild(cardGraphic);
 		cardWrapper.appendChild(cardFront);
-		return cardWrapper;
+
+		cardBackGraphic.src = "./cards/blueback.png";
+		cardBack.appendChild(cardBackGraphic);
+		cardWrapper.appendChild(cardBack);
+		
+		cardContainer.appendChild(cardWrapper);
+		return cardContainer;
 	}
 };
 
-
+/*-----------------------------------------------
+*******DECK SECTION********
+-----------------------------------------------*/
 function Deck() {
 	//Vars
 	this.cards = new Array();
