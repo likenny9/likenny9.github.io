@@ -18,13 +18,140 @@ function initializeGame() {
 
 	//var welcome = new Welcome();
 	//welcome.displayWelcome();
-	//welcome.startButton.onclick = function() {
+	//welcome.startButton.addEventListener('click', function() {
 	//	welcome.removeWelcome();
-		new Game(5,3,1).createBoard();
+		var game = new Game(5,3,1);
+		game.createBoard();
+		var callButton = game.createBoardText(true);
+		var cardPopupWrapper = createCardSelection();
+		callButton.addEventListener('click', function() {
+			showCardSelection(cardPopupWrapper);
+		});
 		//document.querySelector(".cardContainer").classList.toggle("flipCard"); //toggles flipping card
-	//}
+	//});	
 
 }
+
+function createCardSelection() {
+	var cardPopupWrapper = document.createElement("div");
+	cardPopupWrapper.className = "cardPopupWrapper";
+	cardPopupWrapper.style.zIndex = 9000;
+	cardPopupWrapper.style.display = "none";
+
+	var closeButton = document.createElement("span");
+	closeButton.className = "closeCardPopupWrapper";
+	closeButton.innerHTML = "X";
+	
+	closeButton.addEventListener('click', function() {
+		hideCardSelection(cardPopupWrapper);
+	});
+	
+	var submitButton = document.createElement("button");
+	submitButton.className = "submitCardPopupButton";
+	submitButton.innerHTML = "Submit Call";
+	
+	var cardTopSpacing = 2;
+	var cardLeftSpacing = 5;
+	var selectedHand = new Deck();
+	var cardSelection = new Deck();
+	cardSelection.createDeck();
+
+	for(var i = 0; i < cardSelection.cards.length; i++) {
+		(function () { //Closure
+			var card = cardSelection.cards[i];
+			card.clicked = false; //Adds a click toggle to each card
+			var popupCard = cardSelection.cards[i].displayCard();
+			popupCard.style.left = cardLeftSpacing + "px";
+			popupCard.style.top = cardTopSpacing + "px";
+			cardPopupWrapper.appendChild(popupCard);
+			
+			cardLeftSpacing+=80;
+			if(cardLeftSpacing > 700) {
+				cardLeftSpacing = 5;
+				cardTopSpacing+= 50;
+			}
+
+			popupCard.addEventListener("click", function() {
+				selectHandToSubmit(card, popupCard, selectedHand, cardPopupWrapper, submitButton);
+			});	
+		}())
+	}
+
+
+	cardPopupWrapper.appendChild(closeButton);
+	cardPopupWrapper.appendChild(submitButton);
+	document.getElementById("gamecontainer").appendChild(cardPopupWrapper);
+	
+	return cardPopupWrapper;
+
+}
+
+function showCardSelection(cardPopupWrapper) {
+	var gameContainerDivs = document.getElementById("gamecontainer").childNodes;
+	for(var i = 0; i < gameContainerDivs.length; i++) {
+		if(gameContainerDivs[i] == cardPopupWrapper) {
+			cardPopupWrapper.setAttribute("style", "opacity: 1 !important");
+		}
+		else if(gameContainerDivs[i].nodeName.toLowerCase() == "div") {
+			gameContainerDivs[i].setAttribute("style", "opacity: 0.5");
+		}
+	}
+
+	cardPopupWrapper.style.display = "block";
+}
+
+function hideCardSelection(cardPopupWrapper) {
+	var gameContainerDivs = document.getElementById("gamecontainer").childNodes;
+	for(var i = 0; i < gameContainerDivs.length; i++) {
+		if(gameContainerDivs[i].nodeName.toLowerCase() == "div") {
+			gameContainerDivs[i].setAttribute("style", "opacity: 1");
+		}
+	}
+	
+	cardPopupWrapper.style.display = "none";
+}
+
+function selectHandToSubmit(card, popupCard, selectedHand, cardPopupWrapper, submitButton) {
+	if(!card.clicked) {
+		popupCard.className += " highlightCard";
+		card.clicked = true;
+	}
+	else {
+		popupCard.className = popupCard.className.replace(new RegExp("(\\s|^)highlightCard(\\s|$)") , "" );
+		card.clicked = false;
+	}
+	
+	var addCard = true;
+	for(var i = 0; i < selectedHand.cards.length; i++) { //Checks if card is already in array
+		if(selectedHand.cards[i].number == card.number && selectedHand.cards[i].suit == card.suit) { 
+			addCard = false; //if card is in array, don't add
+	
+			if(!selectedHand.cards[i].clicked) { //if card is in array and not clicked
+				selectedHand.removeCard(card); //remove the card from array
+			}
+		}
+	}
+
+	if((selectedHand.cards.length == 0 && addCard) || addCard ) { //length 0 && add so removing doesn't re-add
+		selectedHand.addCard(card);
+	}
+
+	submitButton.addEventListener("click", function () {
+		popupCard.className = popupCard.className.replace(new RegExp("(\\s|^)highlightCard(\\s|$)") , "" );
+		card.clicked = false;
+		submitHand(cardPopupWrapper, selectedHand);
+	});
+	console.log(selectedHand);
+}
+
+function submitHand(cardPopupWrapper, selectedHand) {
+	hideCardSelection(cardPopupWrapper);
+	//do something
+	//not working. X needs to hide, clear array, and highlighting
+	//submit does same and analayzes
+	//selectedHand = new Array();
+}
+
 /*-----------------------------------------------
 *******WELCOME SECTION********
 -----------------------------------------------*/
@@ -82,6 +209,9 @@ function Game(numStartCards, numComputers, difficultyLevel) {
 
 //Methods - createBoard
 Game.prototype = {
+	/*-----------------
+	  Creates the player and computers on the board.
+	  -----------------*/
 	createBoard: function() {
 		//Creates new shuffled deck of cards.
 		var deck = new Deck();
@@ -163,8 +293,7 @@ Game.prototype = {
 			}
 		}
 		
-		console.log(deck);
-		
+		//Helper to rotate card for appropriate browser
 		function rotateCards(wrapper) {
 			wrapper.style.webkitTransform = 'rotate('+90+'deg)'; 
 			wrapper.style.mozTransform    = 'rotate('+90+'deg)'; 
@@ -172,6 +301,70 @@ Game.prototype = {
 			wrapper.style.oTransform      = 'rotate('+90+'deg)'; 
 			wrapper.style.transform       = 'rotate('+90+'deg)'; 
 		}
+	},
+	/*-----------------
+	  Displays all text on the board.
+	  @params - Boolean for whether it is first turn or not
+	  @returns - HTML button for calling hand.
+	  -----------------*/
+	createBoardText: function(firstTurn) {
+		var mainText = document.createElement("div");
+		mainText.className = "mainTextWrapper";	
+		var mainTextTitle = document.createElement("p");
+		mainTextTitle.className = "mainTextTitle";	
+		mainTextTitle.innerHTML = "BS Poker";
+		var mainTextButtonWrapper = document.createElement("div");
+		mainTextButtonWrapper.className = "mainTextButtonWrapper";
+		var turnText = document.createElement("span");
+		turnText.className = "turnText";
+		turnText.innerHTML = "YOUR TURN";
+		mainTextButtonWrapper.appendChild(turnText);
+		
+		var callButton = document.createElement("button");
+		callButton.className = "buttons callButton";
+		callButton.innerHTML = "Call Hand";
+		mainTextButtonWrapper.appendChild(callButton);
+		
+		if(!firstTurn) {
+			var bsButton = document.createElement("button");
+			bsButton.className = "buttons bsButton";
+			bsButton.innerHTML = "Call BS";
+			mainTextButtonWrapper.appendChild(bsButton);
+		}
+
+		mainText.appendChild(mainTextTitle);
+		mainText.appendChild(mainTextButtonWrapper);
+		document.getElementById("gamecontainer").appendChild(mainText);
+		
+		var calledHandWrapper = document.createElement("div");
+		calledHandWrapper.className = "calledHandWrapper";	
+		document.getElementById("gamecontainer").appendChild(calledHandWrapper);
+		
+		var playerText = document.createElement("div");
+		playerText.className = "playerWrapper playerText";	
+		playerText.innerHTML = "YOU";
+		document.getElementById("gamecontainer").appendChild(playerText);
+		
+		var computer1Text = document.createElement("div");
+		computer1Text.className = "computerWrapper computer1Text";	
+		computer1Text.innerHTML = "Computer 1";
+		document.getElementById("gamecontainer").appendChild(computer1Text);
+		
+		if(this.numComputers == 2 || this.numComputers == 3) {
+			var computer2Text = document.createElement("div");
+			computer2Text.className = "computerWrapper computer2Text";	
+			computer2Text.innerHTML = "Computer 2";
+			document.getElementById("gamecontainer").appendChild(computer2Text);
+		}
+		
+		if(this.numComputers == 3) {
+			var computer3Text = document.createElement("div");
+			computer3Text.className = "computerWrapper computer3Text";	
+			computer3Text.innerHTML = "Computer 3";
+			document.getElementById("gamecontainer").appendChild(computer3Text);
+		}
+		
+		return callButton;
 	}
 
 };
@@ -522,5 +715,13 @@ Deck.prototype = {
 	combineDecks: function(deck) {
 		this.cards = this.cards.concat(deck.cards);
 		deck.cards = new Array();
-	} //combineDecks
+	}, //combineDecks
+	
+	/*-----------------
+	   Removes card from the deck.
+	   @param - card to remove
+	  -----------------*/
+	removeCard: function(card) {
+		this.cards.splice(this.cards.indexOf(card),1);
+	}
 };
