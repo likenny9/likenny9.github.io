@@ -38,23 +38,27 @@ function initializeGame() {
 				game.turn++;
 				if(game.turn == 2) {
 					competitors[3].highlightWrapper();
+					competitors[3].computerSelection(game.turn);
 					//competitors[0].calledHandWrapper.querySelector
 				}
 				else if(game.turn == 3) {
 					competitors[1].highlightWrapper();
+					competitors[1].computerSelection(game.turn);
 					competitors[3].undoHighlightWrapper();
 				}
 				else if(game.turn == 4) {
 					competitors[2].highlightWrapper();
+					competitors[2].computerSelection(game.turn);
 					competitors[1].undoHighlightWrapper();
 				}
 				else {
 					game.turn = 1;
 					competitors[2].undoHighlightWrapper();
 					competitors[0].highlightWrapper();
+					competitors[0].showButtons();
 					clearInterval(intervalID);
 				}
-			}, 1000);
+			}, 2000);
 
 		});
 	//});	
@@ -116,7 +120,7 @@ function Game(numStartCards, numComputers, difficultyLevel, selectedHand) {
 	this.numComputers = numComputers;
 	this.difficultyLevel = difficultyLevel;
 	this.selectedHand = selectedHand;
-	var cardPopupWrapper, mainTextWrapper, calledHandWrapper;
+	var cardPopupWrapper, mainTextWrapper, calledHandWrapper, callText;
 	var player, computer1, computer2, computer3;
 	var turn;	
 }
@@ -262,7 +266,7 @@ Game.prototype = {
 		bsButton.innerHTML = "Call BS";
 		bsButton.style.display = "none";
 		mainTextButtonWrapper.appendChild(bsButton);
-
+		
 		this.mainTextWrapper.appendChild(mainTextTitle);
 		this.mainTextWrapper.appendChild(mainTextButtonWrapper);
 		document.getElementById("gamecontainer").appendChild(this.mainTextWrapper);
@@ -270,6 +274,10 @@ Game.prototype = {
 		this.calledHandWrapper = document.createElement("div");
 		this.calledHandWrapper.className = "calledHandWrapper";	
 		document.getElementById("gamecontainer").appendChild(this.calledHandWrapper);
+		
+		var callText = document.createElement("span");
+		callText.className = "turnText";
+		this.calledHandWrapper.appendChild(callText);
 		
 		var playerText = document.createElement("div");
 		playerText.className = "playerWrapper playerText";	
@@ -345,6 +353,26 @@ Player.prototype = {
 	undoHighlightWrapper: function() {
 		this.playerWrapper.style.background = "none";
 		this.playerWrapper.style.boxShadow = "none";
+	},
+	
+	/*-----------------
+	  Shows the buttons when it's player's turn
+	  -----------------*/
+	showButtons: function() {
+		this.mainTextWrapper = document.getElementsByClassName("mainTextWrapper")[0];
+		this.mainTextWrapper.querySelector("div").querySelector(".callButton").style.display = "inline"
+		this.mainTextWrapper.querySelector("div").querySelector(".bsButton").style.display = "inline";
+		this.mainTextWrapper.querySelector("div").querySelector("span").innerHTML = "YOUR TURN";
+	},
+	
+	/*-----------------
+	  Hides the buttons when it's not player's turn
+	  -----------------*/
+	hideButtons: function() {
+		this.mainTextWrapper = document.getElementsByClassName("mainTextWrapper")[0];
+		this.mainTextWrapper.querySelector("div").querySelector(".callButton").style.display = "none"
+		this.mainTextWrapper.querySelector("div").querySelector(".bsButton").style.display = "none";
+		this.mainTextWrapper.querySelector("div").querySelector("span").innerHTML = "";	
 	},
 	
 	/*-----------------
@@ -484,15 +512,10 @@ Player.prototype = {
 	submitHand: function() {
 		this.calledHandWrapper = document.getElementsByClassName("calledHandWrapper")[0];
 		
-		this.mainTextWrapper = document.getElementsByClassName("mainTextWrapper")[0];
-		this.mainTextWrapper.querySelector("div").querySelector(".callButton").style.display = "none"
-		this.mainTextWrapper.querySelector("div").querySelector(".bsButton").style.display = "none";
-		this.mainTextWrapper.querySelector("div").querySelector("span").innerHTML = "";
+		this.hideButtons(); //hides the buttons on submit
 		
-		var callText = document.createElement("span");
-		callText.className = "turnText";
+		var callText = document.getElementsByClassName("turnText")[1];
 		callText.innerHTML = "YOUR<br>CALL";
-		this.calledHandWrapper.appendChild(callText);
 	
 		this.selectedHand.cards.sort(function(card1,card2){ return card1.order - card2.order });
 		var divTopSpacing = 5;
@@ -565,6 +588,19 @@ Computer.prototype = {
 		this.computerWrapper.style.background = "none";
 		this.computerWrapper.style.boxShadow = "none";
 	},
+	
+	computerSelection: function(turn) {
+		var turnText = document.getElementsByClassName("turnText")[0];
+		turnText.innerHTML = "COMPUTER " + parseInt(turn-1) + "'s TURN";
+		var callText = document.getElementsByClassName("turnText")[1];
+		callText.innerHTML = "COMP " + parseInt(turn-1) + "'s <br> CALL";
+		
+		
+		var cardContainers = document.getElementsByClassName("calledHandWrapper")[0];	
+		while(cardContainers.childNodes.length > 1) {
+			cardContainers.removeChild(cardContainers.lastChild);
+		}
+	}
 	
 	
 };
