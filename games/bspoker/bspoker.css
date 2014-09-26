@@ -88,7 +88,7 @@ noscript span {
 	left: 200px;
 	height: 125px;
 	width: 660px;
-	border: 2px solid black;
+	-border: 2px solid black;
 }
 
 .mainTextTitle {
@@ -135,7 +135,7 @@ noscript span {
 	left: 200px;
 	height: 130px;
 	width: 660px;
-	border: 2px solid black;
+	-border: 2px solid black;
 }
 
 .playerWrapper {
@@ -256,7 +256,7 @@ noscript span {
   Cards
 ------------*/
 .cardContainer{
-  -	background-image: url("./cards/blueback.png");
+  -background-image: url("./cards/blueback.png");
   position: absolute;
   width:  72px;
   height: 96px;
@@ -266,7 +266,7 @@ noscript span {
   -ms-perspective: 1000;
 }
 
-.cardContainer.flipCard .cardWrapper, {
+.cardContainer.flipCard .cardWrapper {
 	transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);
