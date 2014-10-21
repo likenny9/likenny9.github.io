@@ -1,4 +1,13 @@
 $(document).ready(function() {
+});
+
+
+$(window).load(function() {
+  setTimeout(function() {
+   $('#loading').fadeOut(500, function() {
+     $('#white_bg').fadeOut(500, function() {});
+   });
+ }, 1500);
 
 	/**** Section redirect buttons ****/
 	$(".about_button").click(function() {
@@ -31,7 +40,7 @@ $(document).ready(function() {
 			scrollTop : $("#section_1").offset().top
 		}, 700);
 	});
-	
+
 	/**** Toggle left slider ****/
 	var sliderOut = true;
 	$("#button_toggle").click(function() {
@@ -42,7 +51,7 @@ $(document).ready(function() {
 			$('#button_toggle').dequeue().stop().animate({
 				left: 4
 			}, 0);
-			
+
 			$('#button_toggle span').html('&gt;&gt;');
 			sliderOut = false;
 		}
@@ -56,14 +65,10 @@ $(document).ready(function() {
 
 			$('#button_toggle span').html('&lt;&lt;');
 			sliderOut = true;
-		}	
+		}
 	});
-	
-	//$('#main_wrapper_2').fadeIn(5500); examples	
 
-	/**$( "#section_2" ).show( "slow", function() {
-		
-	});*/
+
 	var prevScrollTop = 0;
 	var animatedBefore = false;
 	var runElseStatement = false;
@@ -75,7 +80,7 @@ $(document).ready(function() {
 	var percent100 = 100 + "%";
 	var headerTop = 220;
 	var headerMargin = 20;
-	
+
 	/****
 		Function ensures animation only once when passing a certain point.
 	****/
@@ -101,11 +106,11 @@ $(document).ready(function() {
 			}
 		}
 	}
-	
+
 	$(window).on("scroll", function() {
 		var currScrollTop = $(this).scrollTop(); //sets scrolltop
 		var pixelsScrolled = currScrollTop - prevScrollTop;
-		
+
 		/**** Moves header for parallax effect ****/
 		if ($(window).scrollTop() > headerTop ) {
 			$('#main_wrapper_1').dequeue().stop().animate({
@@ -122,45 +127,59 @@ $(document).ready(function() {
 			}
 		}
 
+		wrapperLocation(currScrollTop,prevScrollTop, 200);
+		if ($(window).scrollTop() > 200 ) {
+				$('#main_wrapper_2').dequeue().stop().animate({
+					opacity: 1
+				}, 100, "swing");
+			$('#main_wrapper_2').css('display','block'); //display changes as animation starts
+		} else {
+				$('#main_wrapper_2').dequeue().stop().animate({
+					opacity: 0
+				}, 100, "swing", function() {
+					$(this).css('display','none'); //change display AFTER 1000ms
+				});
+		}
+
 		/**** Button animation effects ****/
 		wrapperLocation(currScrollTop,prevScrollTop, 695);
 		if ($(window).scrollTop() > 695) {
-		
+
 			$('#top_button').css('display','block');
 			$('#secondary_buttons').css('display','block');
 			$('#secondary_buttons').addClass('buttons_fixed');
 			$('#button_toggle').css('opacity','0');
-			
+
 			if(animate && !animatedBefore) {
 				animatedBefore = true;
-				
+
 				$('.buttons_fixed').dequeue().stop().animate({
 					opacity: 0.9
 				}, 1000, function() {
-				
+
 					$('.button_edit').dequeue().stop().animate({
 						width: 0,
 						padding: 0
 					}, 0);
-					
+
 					$('.buttons_fixed').dequeue().stop().animate({
 						minWidth: 0,
 						left: 0
 					}, 500, function() {
-					
+
 						$('.buttons_fixed').dequeue().stop().animate({
 							top: 50,
 							width: 0
 						}, 200, function() {
-						
+
 							$('.button_edit').dequeue().stop().animate({
 								width: 50,
 								height: 75,
-								fontSize: 9.5 
+								fontSize: 9.5
 							}, 0, function() {
 								runElseStatement = true;
 							});
-							
+
 							setTimeout(function() {
 								if($(window).scrollTop() > 695) { //Ensure user hasn't scrolled up
 									$('#button_toggle').css('opacity','1').css('display','block');
@@ -168,18 +187,18 @@ $(document).ready(function() {
 							}, 400);
 						});
 					});
-				});	
+				});
 			}
 			else if (animatedBefore && runElseStatement) {
-				$('#button_toggle').css('opacity','1').css('display','block');			
+				$('#button_toggle').css('opacity','1').css('display','block');
 			}
-			
+
 		} else {
 			$('#top_button').css('display','none');
 			$('#button_toggle').css('display','none');
 			$('#secondary_buttons').css('display','none');
 		}
-		
+
 		prevScrollTop = currScrollTop; //done with scrolltop
 	});
 

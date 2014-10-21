@@ -73,6 +73,24 @@ a:active {
     color: red;
 }
 
+#loading_img {
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	position: fixed;
+}
+
+#loading {
+	margin-left: 40%;
+	margin-top: 10%;
+	position: fixed;
+}
+
+#white_bg {
+	width: 100%;
+	height: 100%;
+}
+
 /*----------------------*/
 /** All Sections **/
 /*----------------------*/
@@ -96,11 +114,11 @@ a:active {
 
 #top_button {
 	display: none;
-    position: fixed; 
+    position: fixed;
     width: 60px !important; /*excludes this button from width change */
 	padding: 10px !important;
     height: 30px !important;
-    top: 10px; 
+    top: 10px;
     left: 4px;
     text-align: center;
     z-index: 10000;
@@ -108,7 +126,7 @@ a:active {
 }
 
 #top_button span {
-	font-size: 0.7rem !important; 
+	font-size: 0.7rem !important;
 	color: #000;
 	position: relative;
 	top: -5px;
@@ -173,12 +191,12 @@ a:active {
 
 #button_toggle {
 	display: none;
-    position: fixed; 
+    position: fixed;
     width: 5px !important; /*excludes this button from width change */
 	padding: 5px !important;
 	-background: orange;
-    height: 75px !important; 
-    top: 75px; 
+    height: 75px !important;
+    top: 75px;
     left: 50px;
     text-align: center;
     z-index: 10000;
@@ -186,7 +204,7 @@ a:active {
 }
 
 #button_toggle span {
-	font-size: 0.4rem !important; 
+	font-size: 0.4rem !important;
 	color: #000;
 	position: relative;
 	top: -1px;
@@ -195,7 +213,7 @@ a:active {
 
 #button_toggle:hover span {
 	color: #FFFFFF;
-	-border-color: #3278BE;	
+	-border-color: #3278BE;
 }
 .buttons_fixed { /* Dynamic add in JS */
 	position: fixed;
@@ -365,7 +383,7 @@ a:active {
 	height: 200px;
 	margin-top: 1%;
 	-border: 2px solid #000;
-}	
+}
 
 #school_text p{
 	font-size: 0.85rem;
@@ -540,7 +558,7 @@ a:active {
 	height: 200px;
 	margin-top: 1%;
 	-border: 2px solid #000;
-}	
+}
 
 .work_text p{
 	font-size: 0.85rem;
