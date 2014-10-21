@@ -1,13 +1,14 @@
 $(document).ready(function() {
-});
-
-
-$(window).load(function() {
   setTimeout(function() {
    $('#loading').fadeOut(500, function() {
      $('#white_bg').fadeOut(500, function() {});
    });
+   $('#loading_img').fadeOut(500,function() {});
  }, 1500);
+});
+
+
+$(window).load(function() {
 
 	/**** Section redirect buttons ****/
 	$(".about_button").click(function() {
@@ -132,14 +133,15 @@ $(window).load(function() {
 				$('#main_wrapper_2').dequeue().stop().animate({
 					opacity: 1
 				}, 100, "swing");
+
 			$('#main_wrapper_2').css('display','block'); //display changes as animation starts
 		} else {
 				$('#main_wrapper_2').dequeue().stop().animate({
-					opacity: 0
 				}, 100, "swing", function() {
 					$(this).css('display','none'); //change display AFTER 1000ms
 				});
 		}
+
 
 		/**** Button animation effects ****/
 		wrapperLocation(currScrollTop,prevScrollTop, 695);
