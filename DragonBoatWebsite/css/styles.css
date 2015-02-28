@@ -1,0 +1,170 @@
+/***** KEY *****/
+/* 1 Fonts */
+/* 2 Entire Document */
+/* 3 Header */
+/* */
+
+
+
+/***************/
+
+
+/** FONTS **/
+@font-face {
+    font-family: 'LatoLight';
+    src: url('../fonts/Lato-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Lato-Light.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Lato-Light.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/** BLANK DOCUMENT SETUP **/
+* {
+  font-family: LatoLight !important;
+  font-size: 1.05em;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: #FFF;
+  text-align: center;
+}
+
+/** HEADER **/
+.nav-container {
+	height: 130px;
+}
+
+.db-logo-container {
+	float: left;
+	margin-top: 20px;
+}
+#db-logo-img {
+	width: 200px;
+	height: 105px;
+}
+
+.navigation {
+	margin-left: 190px;
+	margin-top: 5px;
+	display: table;
+	height: inherit;
+	width: auto;
+}
+
+.navigation ul {
+	display: table-cell;
+	vertical-align: bottom;
+	padding-bottom: 20px;
+  	list-style: none;
+  	margin: 0;
+  	padding: 0;
+  	background-color: #FFF;
+  	position: absolute;
+}
+.navigation li {
+	width: 100px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.0em;
+    display: inline-block;
+    margin-right: -10px;
+}
+
+.navigation a {
+	display: block;
+  	text-decoration: none;
+  	color: #000;
+  	text-align: center;
+  	border-radius: 5px;
+  	transition: .4s background-color;
+}
+ 
+.navigation a:hover {
+	text-decoration: none;
+  	background-color: #DDD;
+  	border-radius: 5px;
+  	transition: .4s background-color;
+}
+ 
+.navigation a.active {
+	 background-color: #FFF;
+	 color: #444;
+	 cursor: default;
+}
+
+.entire-menu {
+	text-align: center;
+	float: right;
+}
+
+.show-menu {
+	text-decoration: none;
+	text-align: center;
+	padding: 20px 0;
+	width: 50px;
+    height: 40px;
+	display: none;
+}
+
+/** Need to fix the hr stuff */
+.show-menu hr {
+	border-color: #000;
+	height: 0.1px;
+	margin-top : -12px;
+	width: 25%;
+	margin-left: 15px;
+	text-align: center;
+}
+
+.show-menu:hover {
+	text-decoration: none;
+  	background-color: #DDD;
+  	border-radius: 5px;
+  	transition: .4s background-color;
+}
+ 
+.show-menu:active {
+	 background-color: #FFF;
+	 color: #444;
+	 cursor: default;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+input[type=checkbox]:checked ~ #menu {
+	display: block;
+}
+ 
+/* Mobile */
+@media screen and (max-width: 685px) {
+	.navigation {
+		display: block;
+
+	}
+	.navigation ul {
+		position: static;
+		display: none;
+	}
+   	.navigation li {
+	  	line-height: 40px;
+	  	height: 40px;
+	  	border-bottom: 1px solid #DDD;
+	  	display: block;
+  	}
+  	.show-menu {
+  		display: block;
+  		margin-left: 40px;
+  	}
+}
+
