@@ -39,15 +39,16 @@ html, body {
 
 /** HEADER **/
 
-/* logo */
+/* Logo size */
 .db-logo-container {
-	cursor: default;
+	
 }
 #db-logo-img {
 	width: 200px;
 	height: 105px;
 }
 
+/* Navigation - BOOTSTRAP OVERRIDE!  */
 #navigation {
 	margin-left: 215px;
 	border-color: #FFF !important;
@@ -55,7 +56,6 @@ html, body {
 
 }
 
-/* bootstrap override - navbar */
 .navbar-default {
 	background-color: #FFF !important;
 	border-color: #FFF !important;
@@ -99,6 +99,7 @@ html, body {
 	#navigation {
 		width: 40%;
 		float: right;
+		max-height: 380px;
 	}
 
 	.navbar-nav {
@@ -119,13 +120,30 @@ html, body {
 
 	.navbar-fixed-top.navbar-absolute {
 		position: absolute;
-		marign: 0;
+		margin: 0;
 	}
+
 }
 
 @media (min-width: 769px) {
 	.navbar-nav li {
 		float: none !important;
 		display: inline-block !important;
+	}
+}
+
+/* Large screens, makes logo look bigger */
+@media (min-width: 1240px) {
+	#db-logo-img {
+		width: 280px;
+		height: 105px;
+	}
+}
+
+/* Even bigger screens */
+@media (min-width: 1440px) {
+	#db-logo-img {
+		width: 350px;
+		height: 105px;
 	}
 }
