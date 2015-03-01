@@ -147,7 +147,7 @@ input[type=checkbox]:checked ~ #menu {
 }
  
 /* Mobile */
-@media screen and (max-width: 685px) {
+@media (max-width: 685px) {
 	.navigation {
 		display: block;
 
