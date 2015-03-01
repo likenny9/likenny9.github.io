@@ -52,6 +52,7 @@ html, body {
 	margin-left: 215px;
 	border-color: #FFF !important;
 	text-align: center !important;
+
 }
 
 /* bootstrap override - navbar */
@@ -96,7 +97,7 @@ html, body {
 /* Mobile dropdown */
 @media (max-width: 768px) {
 	#navigation {
-		width: 25%;
+		width: 40%;
 		float: right;
 	}
 
@@ -106,6 +107,7 @@ html, body {
 	}
 
 	.navbar-nav li {
+		background-color: #FFF;
 		border-radius: 5px;
 		border-top: 1px solid #EEE !important;
 		border-bottom: 1px solid #DDD !important;
@@ -121,4 +123,9 @@ html, body {
 	}
 }
 
-
+@media (min-width: 769px) {
+	.navbar-nav li {
+		float: none !important;
+		display: inline-block !important;
+	}
+}
