@@ -34,7 +34,7 @@
 
 /***** BLANK DOCUMENT SETUP *****/
 * {
-  	font-family: LatoLight !important;
+  	font-family: LatoLight;
   	font-size: 1.05em;
   	color: black;
  	margin: 0;
@@ -228,9 +228,25 @@ body {
 
 .heading-title {
 	font-family: LatoRegular !important;
-	font-size: 2em !important;
+	font-size: 2.1em !important;
 }
+
+.subheading-title {
+	font-family: LatoRegular !important;
+	font-size: 1.5em !important;
+}
+
 
 .history-container {
 	margin-top: 15px;
+}
+
+/***** RACE RESULTS *****/
+.results-container {
+	font-size: 1em;
+	line-height: 18px;	
+}
+
+.festival-title {
+	font-family: LatoRegular !important;
 }
