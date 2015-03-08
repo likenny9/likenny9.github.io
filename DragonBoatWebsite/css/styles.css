@@ -191,8 +191,20 @@ body {
 	}
 }
 
-/** ABOUT **/
 
+/** FOR EVERY PAGE **/
+.heading-title {
+	font-family: LatoRegular !important;
+	font-size: 2.1em !important;
+}
+
+.subheading-title {
+	font-family: LatoRegular !important;
+	font-size: 1.5em !important;
+}
+
+
+/** ABOUT **/
 .mission-statement {
 	padding: 0 35px;
 	font-size: 0.95em;
@@ -226,17 +238,6 @@ body {
 
 }
 
-.heading-title {
-	font-family: LatoRegular !important;
-	font-size: 2.1em !important;
-}
-
-.subheading-title {
-	font-family: LatoRegular !important;
-	font-size: 1.5em !important;
-}
-
-
 .history-container {
 	margin-top: 15px;
 }
@@ -249,4 +250,31 @@ body {
 
 .festival-title {
 	font-family: LatoRegular !important;
+}
+
+/***** SPONSORS *****/
+.sponsors-container {
+	font-size: 1em;
+	line-height: 18px;	
+}
+
+/***** DONATIONS *****/
+.thanks-container {
+	font-size: 1em;
+	line-height: 18px;	
+}
+
+.donations-container {
+	font-size: 1em;
+	line-height: 18px;
+	border: 1px solid gray;	
+}
+
+.progress-bar {
+	background-color: #000;
+}
+
+.donors-container {
+	font-size: 1em;
+	line-height: 18px;	
 }
