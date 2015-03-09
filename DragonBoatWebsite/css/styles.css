@@ -225,7 +225,7 @@ body {
 
 .roster-container {
 	font-size: 0.9em;
-	border: 1px solid gray;
+	-border: 1px solid gray;
 	line-height: 18px;
 }
 
