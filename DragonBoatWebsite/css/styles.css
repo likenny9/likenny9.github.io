@@ -318,3 +318,28 @@ body {
 	line-height: 13px;	
 }
 
+/***** RECRUITMENT *****/
+.recruitment-container {
+	font-size: 1em;
+	line-height: 18px;		
+}
+
+@media (min-width: 992px) {
+	.practice-info {
+		margin-top: 550px;
+	}	
+}
+
+.location-captions {
+	font-size: 0.8em;
+	display: block;
+	line-height: 8px;
+	font-style: italic;
+}
+
+/***** PHOTOS *****/
+.photos-container {
+
+}
+
+

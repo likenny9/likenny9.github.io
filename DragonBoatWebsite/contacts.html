@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">	
 	<link rel="stylesheet" type="text/css" media="screen" href="css/styles.css">
-	<title>UCSD Dragon Boat - Sponsors</title>
+	<title>UCSD Dragon Boat - Contact</title>
 </head>
 <body>
 	<!-- Navigation Container -->
@@ -43,48 +43,17 @@
 
 	<!-- content -->
 	<div class="container" style="margin-top: 130px">
-		<!-- Sponsors -->
-		<div class="container sponsors-container row">
-			<h4 class="heading-title" style="margin-bottom: 25px">SPONSORS</h4>	
-			<div class="col-md-6">
-				<p class="subheading-title">GoodShop</p>
-				<p style="margin-top: 15px">
-					Help us in a free and easy way!  Shop through Goodshop when 
-					making purchases online at thousands of stores like 
-					<a href="http://www.goodsearch.com/amazon/coupons ">Amazon</a> or 
-					<a href="http://www.goodsearch.com/ralph-lauren/coupons ">Ralph Lauren</a>, 
-					and they'll donate up to 20% of your purchase back to us, 
-					at no cost to you!  <a href="https://www.goodsearch.com/register "> Signup </a> 
-					or click on the logo to automatically sync us for donations! They also 
-					offer tons of deals and coupons, so save on business cards from
-					<a href="http://www.goodsearch.com/vistaprint/coupons "> Vistaprint</a>, 
-					or apparel from <a href="http://www.goodsearch.com/lands-end/coupons "> 
-					Lands' End</a>, so you can save money while supporting us! Thanks!
-				</p>
-			</div>
-			<br>
-            <div class="col-md-6" id="goodshop-widget"></div>
-                
+		<!-- Contacts -->
+		<div class="container contacts-container row">
+			<h4 class="heading-title">CONTACT</h4>	
+
 		</div>
 	</div> <!-- end content container -->
 
 	<br>
+
 	<script src="js/jquery-1.11.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
-	<script>
-	//JS Code for widget
-	(function () {
-	  window.onload = function () {
-	    var body = document.getElementsByTagName('body')[0];
-	    var widget = document.getElementById('goodshop-widget');
-	    if (widget == null) {
-	        body.innerHTML = body.innerHTML + '<div id="goodshop-widget"></div>';
-	        widget = document.getElementById('goodshop-widget');
-	    }
-	    widget.innerHTML = "<iframe src='https://www.goodsearch.com/goodshop/widgets/940274' width=160 height=600 frameBorder=0 scrolling=no name=goodshop_widget></iframe>";
-	  };
-	}());
-	</script>
 </body>
 </html>
