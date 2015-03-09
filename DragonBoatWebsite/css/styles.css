@@ -2,7 +2,8 @@
 /* 1 Fonts */
 /* 2 Entire Document */
 /* 3 Header */
-/* 4 About */
+/* 4 For Every Page */
+/* All other pages in subsequent order */
 
 
 
@@ -195,7 +196,7 @@ body {
 /** FOR EVERY PAGE **/
 .heading-title {
 	font-family: LatoRegular !important;
-	font-size: 2.1em !important;
+	font-size: 2.5em !important;
 }
 
 .subheading-title {
@@ -306,4 +307,14 @@ body {
 	line-height: 18px;	
 }
 
+/***** ALUMNI *****/
+.alumni-container {
+	font-size: 1em;
+	line-height: 18px;		
+}
+
+.ptp {
+	font-family: LatoRegular; 
+	line-height: 13px;	
+}
 
