@@ -68,7 +68,26 @@
 		<!-- Donations -->
 		<div class="container donations-container row">
 			<p style="font-family: LatoRegular; padding-top: 20px">OUR DONATION GOALS</p>
-			<div class="container">
+
+			<!-- Mobile display for donation goals -->
+			<div class="container mobile-goal-container">
+	            <span >
+	            	<label class="mobile-progress-label">Race Fees</label><br>
+	            	<p class="progress-bar mobile-progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">100% - $2000/$2000</p><br>
+
+	            	<label class="mobile-progress-label">Race Food/Gas/Housing</label><br>
+	             	<p class="progress-bar mobile-progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">40% - $400/$1000</p> <br><br>
+
+	             	<label class="mobile-progress-label">Boat Rentals</label><br>
+	            	<p class="progress-bar mobile-progress" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">90% - $900/$1000</p><br>
+
+	            	<label class="mobile-progress-label">Team Equipment</label><br>
+	            	<p class="progress-bar mobile-progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">60% - $300/$500</p>          	
+	           	</span>				
+			</div>
+
+			<!-- Desktop display for donation goals -->
+			<div class="container desktop-goal-container">
 	            <span class="col-md-3">
 	            	<p>Race Fees</p>
 	            	<p>Race Food/Gas/Housing</p>
@@ -95,34 +114,37 @@
 	           	</span>
 	        </div>
 	        <div class="container">
-	           	<p>Please choose a donation category and method.</p>
+	           	<p style="margin-top: 20px; font-family: LatoRegular">Please choose a donation category and method.</p>
 	            <span class="col-md-6">
-	            	<p>Tax Deductible Donations</p>
+	            	<p style="font-family: LatoRegular">Tax Deductible Donations</p>
+	            	<!-- Sports Clubs -->
 	            	<a href="https://giveto.ucsd.edu/make-a-gift?sk=3&txtFundNo=4962" target="_blank">
 	            		<img src="images/sports_clubs_donate.jpg" width="175" height="50">
 	            	</a>
-           			<p>Note: Sports Clubs will take a 6% Processing Fee.</p>
+           			<p style="font-size:0.8em">Note: Sports Clubs will take a 6% Processing Fee.</p>
 	           	</span>
 	            <span class="col-md-6">
-	            	<p>Immediate Donations</p>
-	            	<a class="venmo-pay-button" data-recipient-id="1404344968675328584" target="_blank">
-	            		<img src="images/venmo_logo.jpg" width="50" height="45">
+	            	<p style="font-family: LatoRegular">Immediate Donations</p>
+	            	<!-- Venmo -->
+	            	<a href="https://venmo.com/w/intents/make-payment?recipient_id=1404344968675328584&referrer="  target="_blank">
+	            		<img src="images/venmo_logo.jpg" width="50" height="47" style="vertical-align: top">
 	            	</a>
+	            	<!-- Pay Pal -->
 					<form style="display: inline" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
 						">
-	            		<input type="image" src="images/paypal_logo.jpg" width="100" height="50" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+	            		<input type="image" src="images/paypal_logo.jpg" width="100" height="50" border="0" name="submit">
 					</form>
 
 	            	<img >
-	            	<p>Note: Donation is not tax deductible.</p>
+	            	<p style="font-size: 0.8em">Note: Donation is not tax deductible.</p>
             	
 	           	</span>
 	        </div>
-	        <div class="container">
-	           	<p>Please fill out the form below after your donation has been made.</p>
-	            <iframe src="https://docs.google.com/forms/d/1Od6lUW1bdE8mxY1RVEQyJxaCOOxE9Un4WLIwg_63F5Y/viewform?embedded=true" width="760" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+	        <div class="container" style="margin-left: -15px">
+	           	<p style="margin-top: 20px">Please fill out the form below after your donation has been made.</p>
+	            <iframe src="https://docs.google.com/forms/d/1Od6lUW1bdE8mxY1RVEQyJxaCOOxE9Un4WLIwg_63F5Y/viewform?embedded=true" width="100%" height="960" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 	        </div>
 		</div>
 		<!-- List of Donors -->

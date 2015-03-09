@@ -274,7 +274,36 @@ body {
 	background-color: #000;
 }
 
+.mobile-progress {
+	text-align: left;
+	padding-left: 5px;
+}
+
+.mobile-progress-label {
+	text-align: left;
+}
+
+@media (max-width: 991px) {
+	.mobile-goal-container {
+		display: block;
+	}
+	.desktop-goal-container {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.mobile-goal-container {
+		display: none;
+	}
+	.desktop-goal-container {
+		display: block;
+	}
+}
+
 .donors-container {
 	font-size: 1em;
 	line-height: 18px;	
 }
+
+
