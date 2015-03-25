@@ -3,280 +3,92 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="Kenny Li - University of California, San Diego">
 		<meta name="keywords" content="CS, CSE, Computer Science, Economics, Management Science, UCSD, University of California, San Diego, Kenny, Li, Kenny Li, k3li">
 		<meta name="author" content="Kenny Li">
 
-		<link rel="stylesheet" type="text/css" href="./css/css_main.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">	
+		<link rel="stylesheet" type="text/css" media="screen" href="css/css_main.css">
+
 		<link rel="shortcut icon" href="./icons/Kiconthumb.ico">
 		<link rel="image_src" type="image/jpeg" href="./images/kennyFB.jpg">
 
-		<script src="./js/jquery-1.11.1.min.js"></script>
-		<script src="./js/js_main.js"></script>
-
 		<title>Kenny Li</title>
-
-		<!-- Style overrides when JavaScript is disabled -->
-		<noscript>
-			<style>
-				.buttons_intro {
-					display: none;
-				}
-				#main_wrapper_2 {
-					display: block !important;
-					width: 80% !important;
-					left: 10% !important;
-				}
-				#main_wrapper_3 {
-					display: block !important;
-					width: 90% !important;
-					left: 5% !important;
-				}
-			</style>
-		</noscript>
 	</head>
 
-	<body>
-    <div id="loading_img">
-			<img id="loading" src="./images/loading.gif" alt="Loading.. Please Wait">
-			<img id="white_bg" src="./images/white.png">
-		</div>
-		<div class="sections" id="section_1">
-			<div id="main_wrapper_1">
-			<!--<noscript>WARNING <br>Javascript not found. <br> For best experience, enable javascript.</noscript>-->
-				<button class="button_style" id="top_button"><span>^ Top</span></button>
-				<button class="button_style" id="button_toggle"><span>&lt;&lt;</span></button>
-				<div id="name_intro">
-					<p id="name">Kenny Li</p>
-					<p id="major_school">
-						Computer Science B.S. <br> Management Science B.S. <br>
-						University of California, San Diego
-					</p>
-				</div>
-				<div class="buttons_intro">
-					<button class="button_style bounce about_button">About</button>
-					<button class="button_style bounce education_button">Education</button>
-					<button class="button_style bounce coding_button">Coding</button>
-					<button class="button_style bounce work_button">Work</button>
-					<button class="button_style bounce contact_button">Contact</button>
-				</div>
-				<div class="buttons_intro" id="secondary_buttons">
-					<button class="button_style button_edit about_button">About</button>
-					<button class="button_style button_edit education_button">Education</button>
-					<button class="button_style button_edit coding_button">Coding</button>
-					<button class="button_style button_edit work_button">Work</button>
-					<button class="button_style button_edit contact_button">Contact</button>
-				</div>
-			</div>
-			<!--<div class="bounce"></div> Bounce animation-->
+	<body ng-app="websiteApp" ng-controller="TabController as tab">
+
+		<!-- Loading -->
+    	<div class="loading-container">
+			<span class="loading-text">Loading Awesomeness</span>
+			<img class="loading-image" src="./images/loading.gif" width="48" height="48">
 		</div>
 
-		<div class="sections" id="section_2" >
-			<div id="main_wrapper_2" ><!--style="display: none; height: 0;" width: 0; left: -10;-->
-				<div class="heading_wrapper">
-					<p id="about_name">About</p>
+		<!-- Navigation Container -->
+		<nav class="navbar navbar-default navbar-fixed-top navbar-absolute">
+			<div class="container-fluid">
+				<div id="navigation">
+					<ul class="nav navbar-nav">
+				 		<li>
+				 			<a href ng-click="tab.setTab(1)">
+				 				<img class="nav-icons" src="images/navicons/homeicon.png">
+				 				<span class="nav-text">Home</span>
+				 			</a>
+				 		</li>
+				        <li>
+				        	<a href ng-click="tab.setTab(2)">
+				        		<img class="nav-icons" src="images/navicons/abouticon.png">
+				        		<span class="nav-text">About</span>
+				        	</a>
+				       	</li>
+				        <li>
+				        	<a href ng-click="tab.setTab(3)">
+				        		<img class="nav-icons" src="images/navicons/resumeicon.png">
+						 		<span class="nav-text">Resume</span>
+				        	</a>
+				        </li>
+				        <li>
+				        	<a href ng-click="tab.setTab(4)">
+				        		<img class="nav-icons" src="images/navicons/contacticon.png">
+				 				<span class="nav-text">Contact</span>				        		
+				        	</a>
+				       	</li>
+					</ul>
 				</div>
-				<div id="about_text">
-					<p>Hello! I'm Kenny, a third year student at the
-          			University of California, San Diego in persuit of a BS in Computer
-          			Science as well as a BS in Management Science.
-          			<br><br>
-          			Please feel free to browse my site and check out all the information
-          			I have available. Further information can be found on my LinkedIn page
-          			(link in contact information) as well as on my resume (given upon request).
-          			If you see anything that catches your eye or just
-          			have general inquiries, let me know - I would enjoy your message.</p>
-				</div>
-
-				<div id="about_img">
-					<img src="./images/kenny-solo.png" alt="Kenny">
-				</div>
+			</div> <!-- end container-fluid -->
+		</nav> <!-- end navigation -->
+    
+    	<!-- Home Page -->
+    	<div class="container tab-pages home-container" ng-show="tab.isSet(1)">
+			<div class="home-inner-container">
+				<p class="name">Kenny Li</p>
+				<p class="major_school">
+					Computer Science B.S. <br> Management Science B.S. <br>
+					University of California, San Diego
+				</p>
 			</div>
 		</div>
 
-		<div class="sections" id="section_3">
-			<div id="main_wrapper_3"> <!--style="display: none; width: 0; left: 100%;"-->
-				<div class="heading_wrapper" id="heading_wrapper_3">
-					<p id="education_name">Education</p>
-				</div>
-				<div id="school_wrapper">
-					<div id="school_name">University of California, San Diego</div>
-					<div id="school_sidebar">
-      					<a href="http://www.ucsd.edu/" target="_blank">
-        					<img id="ucsd_picture" src="./images/ucsdbanner_white.png" alt="UCSD Logo" title="UC San Diego" height="41" width="175">
-      					</a>
-      					<div id="school_sidebar_desc">
-        					Computer Science B.S.<br>Mangement Science B.S.<br>Est Graduation: Jun 2016<br>GPA: 3.35
-      					</div>
-      				</div> <!-- school sidebar -->
-      				<div id="school_text">
-      					<p>
-        					As a third year student at UC San Diego, with my primary major being
-        					computer science, I have taken numerous courses in the past two years as shown below.
-        					Having taken these numerous courses, I have gotten a feel for working
-        					with databases and web development in particular.  In spite of that,
-        					I am also highly interested in working with human-computer interaction,
-        					mobile development, and information technology. In addition, I really enjoy
-        					doing anything that involves data and numbers.
-        				</p>
-      				</div>
-      				<div id="school_coursework">
-        				<p id="cs_coursework">
-        					<span>CSE Coursework</span> <br>
-        					Data Structures <br>
-        					Client Web Apps <br>
-        					Server Web Apps <br>
-        					Enterprise Web Apps <br>
-        					Digital Systems <br>
-        					Discrete Math <br>
-        					Algorithms <br>
-        				</p>
-        				<p id="ms_coursework">
-        					<span> MS Coursework</span> <br>
-        					Microeconomics <br>
-        					Statistics <br>
-        					Econometrics <br>
-        					Environmental Econ	 <br>
-        				</p>
-        			</div> <!-- school coursework wrapper -->
-      			</div> <!-- school wrapper -->
-			</div> <!-- main wrapper -->
-		</div> <!-- Section wrapper -->
-
-		<div class="sections" id="section_4">
-			<div id="main_wrapper_4">
-				<div class="heading_wrapper" id="heading_wrapper_4">
-					<p id="coding_name">Coding and Projects</p>
-				</div>
-				<div id="coding_wrapper">
-					<div class="tech_wrapper">
-					<div class="coding_heading">Technical Skills</div>
-      				<div id="tech_skills_text">
-      					<p>
-      						<span class="tech_skills_header">Computer Languages</span><br>
-      							 C | C++ | C# | Java | HTML | CSS | JavaScript | SQL  <br>
-							<span class="tech_skills_header">Computer Tools/Technologies</span><br>
-								 Vim | Git | Eclipse | JUnit | JIRA | ADT | PostgreSQL | Visual Studio | SQL Server <br>
-							<span class="tech_skills_header">Miscellaneous Software</span><br>
-								 MS Access | Active Directory <br>
-							<span class="tech_skills_header">Computer Techniques</span><br>
-								 Agile Software Development | Model View Controller <br>
-							<span class="tech_skills_header">Operating Systems</span><br>
-								 Windows | Mac OS X | Unix
-        				</p>
-      				</div>
-      				</div>
-      				<div class="tech_wrapper">
-      				<div class="coding_heading">Projects</div>
-      				<div id="projects_text">
-      					<p>
-      						<span class="tech_skills_header">College Web System > CSE 136 - Enterprise Web Apps</span><br>
-      							 College-level web system consisting of accounts, courses, schedules, enrollments, grading. <br>
-      							 Languages+Tools = C#, SQL, HTML, JavaScript (Ajax, knockout) + Visual Studio, SQL Server <br>
-							<span class="tech_skills_header">Browser Meme Organizer > CSE 134B - Client Web Apps</span><br>
-								 Browser-based meme collector and organizer. &nbsp;
-								 <a href="http://acsweb.ucsd.edu/~k3li/CSE134B/project-1-mememaster/">VIEW</a> <br>
-								 Languages+Tools = HTML, CSS, JavaScript (Ajax, IndexedDB) <br>
-							<span class="tech_skills_header">Shopping Analytics App > CSE 135 - Server Web Apps</span><br>
-								 Analytics application that maximizes database efficiency of sales products and figures. <br>
-								 Languages+Tools = JSP, SQL, HTML + PostgreSQL, Tomcat, Eclipse <br>
-							<span class="tech_skills_header">Android Place-Its App > CSE 110 - Software Engineering</span><br>
-								 Located-based post-it Android application with proximity-triggered notifications &nbsp;
-								 <a href="./coding/Team22PlaceIts.apk">APK</a><br>
-								 Note: Needs GPS and network connection to work. <br>
-								 Languages+Tools = Java, XML + Eclipse (Android ADT), Google App Engine
-
-        				</p>
-      				</div>
-      				</div>
-      			</div>
-			</div>
+		<div class="container tab-pages" ng-show="tab.isSet(2)">
+			About<br> Under Construction
 		</div>
 
-		<div class="sections" id="section_5">
-			<div id="main_wrapper_5">
-				<div class="heading_wrapper" id="heading_wrapper_5">
-					<p id="work_name">Work Experience</p>
-				</div>
-				<div id="work_wrapper">
-					<div class="work_name">Information Technology Assistant</div>
-					<div class="work_sidebar">
-      					<a href="http://preuss.ucsd.edu/" target="_blank">
-        					<img class="work_pictures" src="./images/preussbanner.jpg" alt="Preuss Logo" title="The Preuss School UCSD" height="41" width="175">
-      					</a>
-      					<div class="work_sidebar_desc">
-        					The Preuss School UCSD <br> La Jolla, CA <br>
-							<a href="http://preuss-it.ucsd.edu">Preuss IT</a> <br><br>
-							July 2013 - Present
-      					</div>
-      				</div> <!-- work sidebar -->
-      				<div class="work_text">
-      					<p>
- 							As an IT Assistant, I mainly perform hardware and software installations/upgrades on computers in an
-							Active Directory environment as well as troubleshoot computer problems.  In addition to also
-							troubleshooting printers and network issues, I assist staff and students with their personal electronic
-							devices or software as well.  What's great about this position is that it teaches me something new
-							everyday while allowing me to interact with brilliant teachers and students.   I have gone through many
-							problems that I have never seen before, but have solved them by working through them.
-        				</p>
-      				</div>
-      			<div class="work_name">Undergraduate Tutor</div>
-					<div class="work_sidebar">
-      					<a href="http://cse.ucsd.edu/" target="_blank">
-        					<img class="work_pictures" src="./images/csebanner.gif" alt="CSE Logo" title="UCSD Department of Computer Science & Engineering" height="41" width="175">
-      					</a>
-      					<div class="work_sidebar_desc">
-        					Computer Science & Engineering <br>
-							UC San Diego <br>
-							La Jolla, CA <br><br>
-							April 2014 - Present
-      					</div>
-      				</div> <!-- work sidebar -->
-      				<div class="work_text">
-      					<p>
-        					I began tutoring in Spring Quarter 2014 as a tutor for Professor Susan Marx's CSE 3 -
-        					Fluency in Information Technology class.  As a tutor in this course, I support students
-        					who are are new to computer science by guiding them through computer literacy and the
-        					basics of the client side web languages (XHTML, CSS, JavaScript).  Some of my duties include
-        					holding lab hours, grading assignments, and proctoring/grading exams.
-        				</p>
-      				</div>
-      			</div>
-			</div>
+    	<div class="container tab-pages" ng-show="tab.isSet(3)">
+			Resume<br> Under Construction
 		</div>
 
-		<div class="sections" id="section_6">
-			<div id="main_wrapper_6">
-				<div class="heading_wrapper" id="heading_wrapper_6">
-					<p id="contact_name">Contact</p>
-				</div>
-				<div id="contact_title">GET IN TOUCH</div>
-				<div id="contact_subheading">
-					Feel free to send me inquiries, comments, suggestions, or questions.
-				</div>
-				<div id="contact_links">
-      				<table id="contact_table"><tr><td>
-       					<a class="ucsdmail" href="mailto:k3li@ucsd.edu"><img src="./images/emailicon.png"
-       							alt="k3li@ucsd.edu" title="UCSD Email" width=50 height=50></a>
-       					<a href="mailto:likenny9@gmail.com"><img src="./images/gmailicon.png"
-       							alt="likenny9@gmail.com" title="Gmail" width=50 height=50></a>
-       					<a href="http://www.facebook.com/KennyLixD" target="_blank">
-       							<img src="./images/facebookicon.png" alt="Facebook" title="Facebook" width=50 height=50></a>
-       					<a href="http://www.linkedin.com/in/likenny/" target="_blank">
-       							<img src="./images/linkedinicon.png" alt="LinkedIn" title="LinkedIn" width=50 height=50></a>
-       					<p id="emailtextform">k3li@ucsd.edu<br/> likenny9@gmail.com</p>
-      				</td></tr></table>
-    			</div>
-			</div>
+		<div class="container tab-pages" ng-show="tab.isSet(4)">
+			Contact<br> Under Construction
 		</div>
 
-		<div id="section_7">
-			<div id="main_wrapper_7">
-				<p id="copyright">&copy; 2014 - Kenny Li</p>
-			</div>
-		</div>
+		<!-- Script dependencies -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/angular-1.3.15.min.js"></script>
+		<script src="js/js_main.js"></script>
 
 		<!-- Google Analytics -->
+		<!--
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -286,5 +98,6 @@
 			ga('require', 'displayfeatures');
 			ga('send', 'pageview');
 		</script>
+	-->
 	</body>
 </html>
