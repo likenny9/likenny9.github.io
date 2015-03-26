@@ -59,13 +59,24 @@ html {
 body {
 	height: 86.1%;
   	text-align: center;
-  	background-color: #F6F6F6;
+  	background-color: #DEDEDE;
 }
 
 @media (max-width: 768px) {
 	body {
 		height: 89.1%;
 	}
+
+}
+
+.noscript-info {
+	margin-top: 30px;
+	margin-left: 5%;
+	float: none;
+	font-family: QuicksandBold;
+	font-size: 25px;
+	color: red;
+	display: none;
 }
 
 .loading-container {
@@ -93,6 +104,14 @@ body {
 .navbar-default {
 	background-color: #F4851C;
 	border-color: #5E5E5E;
+}
+
+.nav-name {
+	margin-top: 30px;
+	float: left;
+	font-family: QuicksandBold;
+	font-size: 40px;
+	display: block;
 }
 
 .nav-icons {
@@ -157,6 +176,10 @@ body {
 }
 
 @media (max-width: 768px) {
+	.nav-name {
+		display: none;
+	}
+
 	.nav-icons {
 		width: 25px;
 		height: 25px;
@@ -203,7 +226,7 @@ body {
 	margin-top: 106px;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-y: scroll;
 }
 
 @media (max-width: 768px) {
@@ -216,11 +239,10 @@ body {
 /***** Home Page *****/
 
 .home-container {
-	width: 100%;
-	height: 100%;
 	background: url('../images/lakearrowhead.jpg');
 	background-size: 100% 100%;
 }
+
 .home-inner-container {
 	margin-top: 120px;
 }
@@ -229,13 +251,13 @@ body {
   	font-family: BrushScript;
   	font-size: 100px;
   	font-weight: bold;
-  	color: black;
+  	color: #EEE;
 }
 
 .major_school {
 	font-family: Charcoal;
 	font-size: 25px;
-	color: black;
+	color: #EEE;
 }
 
 @media (max-width: 768px) {
@@ -244,5 +266,87 @@ body {
 	}
 	.major_school {
 		font-size: 17px;
+	}
+}
+
+
+/***** About Page *****/
+
+.about-inner-container {
+	margin-top: 40px;
+}
+
+.about-text-container {
+	text-align: left;
+}
+
+.about-headers {
+	font-family: QuicksandBold;
+	font-size: 1.7em;
+}
+
+.about-text {
+	font-size: 1.1em;
+	margin-bottom: 30px;
+}
+
+.about-text-headers {
+	font-family: QuicksandBold;
+}
+
+
+/***** Contact Page *****/
+
+.contact-title {
+	font-size: 45px;
+	font-family: Charcoal;
+	margin-top: 40px;
+	text-shadow: 0px 0px 30px #A0C4DD;
+}
+
+.contact-table-container {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.contact-table {
+	display: inline-block;
+	margin: 0 20px;
+	height: 75px;
+	width: 75px;
+}
+
+.contact-table img:hover {
+	transform: scaleX(1.5) scaleY(1.5);
+  	-webkit-transform: scaleX(1.5) scaleY(1.5);
+	-moz-transform: scaleX(1.5) scaleY(1.5);
+	-ms-transform: scaleX(1.5) scaleY(1.5);
+	-o-transform: scaleX(1.5) scaleY(1.5);
+	transition: 1s background-color;
+	box-shadow: 0px 0px 30px #F4851C;
+	border-radius: 9px;
+}
+
+#github-image {
+	border: 1px solid #EEE; 
+	border-radius: 8px; 
+	background-color: #FEFEFE;
+}
+
+/* For contact button to split in half */
+@media (max-width: 506px) {
+	.contact-table-container {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media (max-width: 370px) {
+	.contact-table-container {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

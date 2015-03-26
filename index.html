@@ -14,6 +14,22 @@
 		<link rel="shortcut icon" href="./icons/Kiconthumb.ico">
 		<link rel="image_src" type="image/jpeg" href="./images/kennyFB.jpg">
 
+		<noscript>
+			<style>
+				.loading-container {
+					display: none;
+				}
+
+				.navbar-nav {
+					display: none;
+				}
+
+				.noscript-info {
+					display: block;
+				}
+			</style>
+		</noscript>
+
 		<title>Kenny Li</title>
 	</head>
 
@@ -29,6 +45,8 @@
 		<nav class="navbar navbar-default navbar-fixed-top navbar-absolute">
 			<div class="container-fluid">
 				<div id="navigation">
+					<p class="nav-name" style="display: none">Kenny Li</p> <!-- commented out -->
+					<p class="noscript-info">This site works better with JavaScript enabled.</p>
 					<ul class="nav navbar-nav">
 				 		<li>
 				 			<a href ng-click="tab.setTab(1)">
@@ -71,7 +89,42 @@
 		</div>
 
 		<div class="container tab-pages" ng-show="tab.isSet(2)">
-			About<br> Under Construction
+			<div class="about-inner-container">
+				<div class="about-text-container col-md-4">
+					<p class="about-headers">The Basics</p>
+					<p class="about-text">
+						Age 20 years. San Francisco native.<br>
+						Interests include software engineering, web development/applications, mobile applications, human-computer interaction, and data analysis.
+					</p>
+
+					<p class="about-headers">The Education</p>
+					<p class="about-text">
+						Third Year. Computer Science. Economics.<br>
+						University of California, San Diego<br>
+						Est Graduation June 2016<br>
+						GPA: 3.39
+					</p>
+				</div>
+				<div class="about-text-container col-md-4">
+					<p class="about-headers">The Skills</p>
+					<p class="about-text">
+						<span class="about-text-headers">Languages Proficient In</span><br>
+						Java | HTML | CSS | JavaScript | SQL<br><br>
+						<span class="about-text-headers">Languages Experience With</span><br>
+						C | C++ | C# | Python | PHP<br><br>
+						<span class="about-text-headers">Other Experience</span><br>
+						Android | JSON | MEAN Stack<br><br>
+						<span class="about-text-headers">Tools</span><br>
+						Vim | Git | Eclipse | JUnit | JIRA | PostgreSQL | Visual Studio | SQL Server<br><br>
+						<span class="about-text-headers">Spoken Languages</span><br>
+						English (Fluent) | Cantonese (Native) | Mandarin (Limited) | Japanese (Intermediate)
+					</p>
+				</div>
+				<div class="about-image-container col-md-4">
+					<img src="./images/kenny-solo.png" alt="Kenny">
+				</div>
+
+			</div>
 		</div>
 
     	<div class="container tab-pages" ng-show="tab.isSet(3)">
@@ -79,7 +132,34 @@
 		</div>
 
 		<div class="container tab-pages" ng-show="tab.isSet(4)">
-			Contact<br> Under Construction
+			<div class="contact-inner-container">
+				<p class="contact-title">GET IN TOUCH</p>
+
+				<div class="contact-table-container">
+	  				<div class="contact-table">
+	   					<a href="mailto:k3li@ucsd.edu"><img src="./images/emailicon.png" 
+	   								 alt="k3li@ucsd.edu" width=50 height=50></a>
+	   				</div>
+	  				<div class="contact-table">	   				
+	   					<a href="mailto:likenny9@gmail.com"><img src="./images/gmailicon.png" 
+	   								 alt="likenny9@gmail.com" width=50 height=50></a>
+	   				</div>
+	  				<div class="contact-table">
+	   					<a href="http://www.github.com/likenny9" target="_blank">
+	   								 <img id="github-image" src="./images/githubicon.png" alt="Github" width=50 height=50></a>   
+	   				</div>
+	  				<div class="contact-table">        
+	   					<a href="http://www.linkedin.com/in/likenny/" target="_blank">
+	   								 <img src="./images/linkedinicon.png" alt="LinkedIn" width=50 height=50></a>
+	  				</div> 
+	   				<p style="margin-top: 10px">
+	   					UCSD Email<br> <a href="mailto:k3li@ucsd.edu">k3li@ucsd.edu</a><br> 
+	   					Gmail<br> <a href="mailto:likenny9@gmail.com">likenny9@gmail.com</a><br>
+	   					Github<br> <a href="http://www.github.com/likenny9" target="_blank">http://www.github.com/likenny9</a><br>
+	   					LinkedIn<br> <a href="http://www.linkedin.com/in/likenny" target="_blank">http://www.linkedin.com/in/likenny</a><br>
+	   				</p>                     
+				</div>
+			</div>
 		</div>
 
 		<!-- Script dependencies -->
