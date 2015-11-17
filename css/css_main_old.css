@@ -1,0 +1,369 @@
+/*****
+----------------------
+KEY
+----------------------
+Fonts
+Setup + Loading
+Navigation
+All Pages
+Home
+About
+Resume
+Contact
+----------------------
+*****/
+
+@charset "UTF-8";
+
+/***** Fonts *****/
+@font-face {
+	font-family: QuicksandRegular;
+	src: url(../fonts/quicksand/Quicksand-Regular.otf);
+}
+
+@font-face {
+	font-family: QuicksandBold;
+	src: url(../fonts/quicksand/Quicksand-Bold.otf);
+}
+
+@font-face {
+	font-family: BrushScript;
+	src: url(../fonts/brushscript.ttf);
+}
+
+@font-face {
+	font-family: RalewayBold;
+	src: url(../fonts/Raleway-Bold.otf);
+}
+
+@font-face {
+	font-family: Charcoal;
+	src: url(../fonts/Charcoal.ttf);
+}
+
+@font-face {
+    font-family: 'LatoRegular';
+    src: url('../fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Lato-Regular.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/***** BLANK DOCUMENT SETUP *****/
+* {
+  	font-family: QuicksandRegular;
+  	font-size: 1.05em;
+  	color: #2B2B2B;
+ 	margin: 0;
+ 	padding: 0;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: 86.1%;
+  	text-align: center;
+  	background-color: #DEDEDE;
+}
+
+@media (max-width: 768px) {
+	body {
+		height: 89.1%;
+	}
+
+}
+
+.noscript-info {
+	margin-top: 30px;
+	margin-left: 5%;
+	float: none;
+	font-family: QuicksandBold;
+	font-size: 25px;
+	color: red;
+	display: none;
+}
+
+.loading-container {
+	background-color: #F4851C;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	position: fixed;
+}
+
+.loading-image {
+	margin-top: 80px;
+}
+
+.loading-text {
+	display: block;
+	margin-top: 60px;
+	text-align: center;
+	font-family: QuicksandBold;
+	font-size: 20px;
+}
+
+
+/* Navigation */
+.navbar-default {
+	background-color: #F4851C;
+	border-color: #5E5E5E;
+}
+
+.nav-name {
+	margin-top: 15px;
+	float: left;
+	font-family: QuicksandBold;
+	font-weight: bold;
+	font-size: 40px;
+	display: block;
+}
+
+.nav-icons {
+	width: 55px;
+	height: 55px;
+}
+
+.nav-text {
+	font-size: 0.8em;
+	font-family: QuicksandBold;
+	display: none;
+}
+
+.navbar-nav a:hover .nav-icons {
+	width: 35px;
+	height: 35px;
+}
+
+.navbar-nav a:hover .nav-text {
+	display: block;
+}
+
+.navbar-nav a {
+	color: #000;
+}
+
+.navbar-nav{
+	float: none;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	-display: inline-block;
+	width: 450px;
+}
+
+.navbar-nav li{
+	display: inline;
+	margin-right: 5%;
+	float: left;
+	width: 90px;
+	height: 90px;
+}
+
+.navbar-nav li a {
+	padding-top: 15px;
+	padding-bottom: 15px;	
+	border: 2px solid black;
+	border-radius: 50px;
+}
+
+.navbar-nav a:hover {
+	text-decoration: none;
+	background-color: #DDD !important;
+	border-radius: 50px;
+	transition: .5s background-color;
+}
+
+.navbar-nav a:active {
+	background-color: #FFF !important;
+	color: #444 !important;
+	cursor: pointer !important;
+}
+
+@media (max-width: 868px) {
+	.nav-name {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.nav-name {
+		display: none;
+	}
+
+	.nav-icons {
+		width: 25px;
+		height: 25px;
+	}
+
+	.nav-text {
+		font-size: 0.6em;
+		text-align: center;
+		display: none;
+	}
+
+	.navbar-nav {
+		width: 300px;
+	}
+
+	.navbar-nav a:hover .nav-icons {
+		width: 25px;
+		height: 25px;
+	}
+
+	.navbar-nav a:hover .nav-text {
+		display: none;
+	}
+
+	.navbar-nav li{
+		width: 60px;
+		height: 60px;
+	}
+
+	.navbar-nav li a {
+		border-radius: 50px;
+	}
+
+	.navbar-nav a:hover {
+		width: 60px;
+		height: 60px;
+		border-radius: 50px;
+	}
+}
+
+
+/***** For All Pages *****/
+.tab-pages {
+	margin-top: 101px;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+@media (max-width: 768px) {
+	.tab-pages {
+		margin-top: 83px;
+	}
+}
+
+
+/***** Home Page *****/
+
+.home-container {
+	background: url('../images/lakearrowhead.jpg');
+	background-size: 100% 100%;
+}
+
+.home-inner-container {
+	margin-top: 120px;
+}
+
+.name {
+  	font-family: BrushScript;
+  	font-size: 100px;
+  	font-weight: bold;
+  	color: #EEE;
+}
+
+.major_school {
+	font-family: Charcoal;
+	font-size: 25px;
+	color: #EEE;
+}
+
+@media (max-width: 768px) {
+	.name {
+		font-size: 70px;
+	}
+	.major_school {
+		font-size: 17px;
+	}
+}
+
+
+/***** About Page *****/
+
+.about-inner-container {
+	margin-top: 40px;
+}
+
+.about-text-container {
+	text-align: left;
+}
+
+.about-headers {
+	font-family: QuicksandBold;
+	font-size: 1.7em;
+}
+
+.about-text {
+	font-size: 1.1em;
+	margin-bottom: 30px;
+}
+
+.about-text-headers {
+	font-family: QuicksandBold;
+}
+
+
+/***** Contact Page *****/
+
+.contact-title {
+	font-size: 45px;
+	font-family: Charcoal;
+	margin-top: 40px;
+	text-shadow: 0px 0px 30px #A0C4DD;
+}
+
+.contact-table-container {
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.contact-table {
+	display: inline-block;
+	margin: 0 20px;
+	height: 75px;
+	width: 75px;
+}
+
+.contact-table img:hover {
+	transform: scaleX(1.5) scaleY(1.5);
+  	-webkit-transform: scaleX(1.5) scaleY(1.5);
+	-moz-transform: scaleX(1.5) scaleY(1.5);
+	-ms-transform: scaleX(1.5) scaleY(1.5);
+	-o-transform: scaleX(1.5) scaleY(1.5);
+	transition: 1s background-color;
+	box-shadow: 0px 0px 30px #F4851C;
+	border-radius: 9px;
+}
+
+#github-image {
+	border: 1px solid #EEE; 
+	border-radius: 8px; 
+	background-color: #FEFEFE;
+}
+
+/* For contact button to split in half */
+@media (max-width: 506px) {
+	.contact-table-container {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media (max-width: 370px) {
+	.contact-table-container {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

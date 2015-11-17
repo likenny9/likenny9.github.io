@@ -1,34 +1,29 @@
 $(document).ready(function() {
-	setTimeout(function() {
-   		$('.loading-image').fadeOut(1000, function() {
-     		$('.loading-text').fadeOut(1000, function() {});
-   		});
 
-   		$('.loading-container').fadeOut(1000,function() {});
+    //Smooth scrolling for each section
+    var $root = $('html, body');
+    $('a[href*=#]').on('click', function(event) {
+        event.preventDefault();
+        var selectorName = $($.attr(this, 'href')).selector; //Gets correct anchor tag
+        selectorName = selectorName.substr(1,selectorName.length); //removes # from anchor
+        $root.animate({
+            scrollTop: $('[name='+selectorName+']').offset().top
+        }, 700);
+        return false;
+    });
 
- 	}, 2500);
 });
 
+//Angular
+(function() {
+    var app = angular.module('kennyApp', []);
 
-//Angular Tab Controller
-(function () {
-    var app = angular.module('websiteApp', []);
+    app.controller('kennyController', function () {
 
-    app.controller('TabController', function () {
-        this.tab = 1;
-
-        this.setTab = function (tabId) {
-            this.tab = tabId;
-        };
-
-        this.isSet = function (tabId) {
-            return this.tab === tabId;
-        };
     });
 })();
 
 
 $(window).load(function() {
-
-	
+	//do something
 });
