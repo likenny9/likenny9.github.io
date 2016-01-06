@@ -1,186 +1,270 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="Kenny Li - University of California, San Diego">
-		<meta name="keywords" content="CS, CSE, Computer Science, Economics, Management Science, UCSD, University of California, San Diego, Kenny, Li, Kenny Li, k3li">
-		<meta name="author" content="Kenny Li">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Kenny Li - University of California, San Diego">
+	<meta name="keywords" content="CS, CSE, Computer Science, Economics, Management Science, UCSD, University of California, San Diego, Kenny, Li, Kenny Li, k3li">
+	<meta name="author" content="Kenny Li">
 
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">	
-		<link rel="stylesheet" type="text/css" media="screen" href="css/css_main.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/css_main.css">
 
-		<link rel="shortcut icon" href="./icons/Kiconthumb.ico">
-		<link rel="image_src" type="image/jpeg" href="./images/kennyFB.jpg">
+	<link rel="shortcut icon" href="./img/PersonalLogo.png">
+	<link rel="image_src" type="image/jpeg" href="img/personal/kennyFB.jpg">
 
-		<noscript>
-			<style>
-				.loading-container {
-					display: none;
-				}
+	<!-- Script dependencies -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular-1.3.15.min.js"></script>
+	<script src="js/js_main.js"></script>
 
-				.navbar-nav {
-					display: none;
-				}
+	<title>Kenny Li</title>
+</head>
+<body ng-app="kennyApp" ng-controller="kennyController">
 
-				.noscript-info {
-					display: block;
-				}
-			</style>
-		</noscript>
+	<!-- Navigation Container -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-absolute">
+		<div class="container-fluid">
+			<a href="#top" id="logo-style">
+				<img id="logo-icon" src="img/PersonalLogo.png">
+			</a>
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="#about">
+						<img class="nav-icons" src="img/nav-icons/abouticon.png">
+						<span class="nav-text">About</span>
+					</a>
+				</li>
+				<li>
+					<a href="#projects">
+						<img class="nav-icons" src="img/nav-icons/resumeicon.png">
+						<span class="nav-text">Projects</span>
+					</a>
+				</li>
+				<li>
+					<a href="#contact">
+						<img class="nav-icons" src="img/nav-icons/contacticon.png">
+						<span class="nav-text">Contact</span>
+					</a>
+				</li>
+			</ul>
+		</div> <!-- end container-fluid -->
+	</nav> <!-- end navigation -->
 
-		<title>Kenny Li</title>
-	</head>
-
-	<body ng-app="websiteApp" ng-controller="TabController as tab">
-
-		<!-- Loading -->
-    	<div class="loading-container">
-			<span class="loading-text">Loading Awesomeness</span>
-			<img class="loading-image" src="./images/loading.gif" width="48" height="48">
+	<!-- Main -->
+	<div class="container tab-pages home-container">
+		<a class="section-anchors" name="top"></a>
+		<div class="home-inner-container inner-container">
+			<p class="home-name">KENNY LI</p>
+			<p class="home-subheading">User Focused. Developer.</p>
+			<a id="home-resume" class="btn btn-default" href="files/Resume-Kenny_Li.pdf" target="_blank">Resume</a>
 		</div>
+	</div>
 
-		<!-- Navigation Container -->
-		<nav class="navbar navbar-default navbar-fixed-top navbar-absolute">
-			<div class="container-fluid">
-				<div id="navigation">
-					<p class="nav-name" style="">KENNY LI</p> <!-- commented out -->
-					<p class="noscript-info">This site works better with JavaScript enabled.</p>
-					<ul class="nav navbar-nav">
-				 		<li>
-				 			<a href ng-click="tab.setTab(1)">
-				 				<img class="nav-icons" src="images/navicons/homeicon.png">
-				 				<span class="nav-text">Home</span>
-				 			</a>
-				 		</li>
-				        <li>
-				        	<a href ng-click="tab.setTab(2)">
-				        		<img class="nav-icons" src="images/navicons/abouticon.png">
-				        		<span class="nav-text">About</span>
-				        	</a>
-				       	</li>
-				        <li>
-				        	<a href ng-click="tab.setTab(3)">
-				        		<img class="nav-icons" src="images/navicons/resumeicon.png">
-						 		<span class="nav-text">Resume</span>
-				        	</a>
-				        </li>
-				        <li>
-				        	<a href ng-click="tab.setTab(4)">
-				        		<img class="nav-icons" src="images/navicons/contacticon.png">
-				 				<span class="nav-text">Contact</span>				        		
-				        	</a>
-				       	</li>
-					</ul>
-				</div>
-			</div> <!-- end container-fluid -->
-		</nav> <!-- end navigation -->
-    
-    	<!-- Home Page -->
-    	<div class="container tab-pages home-container" ng-show="tab.isSet(1)">
-			<div class="home-inner-container">
-				<p class="name">Kenny Li</p>
-				<p class="major_school">
-					Computer Science B.S. <br> Economics B.A. <br>
-					University of California, San Diego
+	<!-- About -->
+	<div class="container tab-pages about-container">
+		<a class="section-anchors" name="about" id="about"></a>
+		<div class="about-inner-container inner-container">
+			<p class="heading-name">About</p>
+			<div class="col-md-4" id="about-image-container">
+				<img id="about-image" src="img/personal/kenny-solo.png" alt="Kenny">
+
+			</div>
+			<div class="col-md-8">
+				<br>
+				<p id="about-description">I am interested in usability and bringing information to people more easily.
+				   I want to create simple, elegant products that will globally connect people through technology.<br><br>
+
+					<div id="about-skills">
+						<span class="about-subinfo-title">SKILLS</span> <br>
+						<span class="about-text-headers">Languages Proficient In: </span>
+						Java | HTML | CSS | JavaScript (jQuery, Angular, Node) | SQL<br>
+						<span class="about-text-headers">Other Experience:</span>
+						Android | JSON | MEAN Stack | Rails<br>
+						<span class="about-text-headers">Tools:</span>
+						Vim | Git | IntelliJ | Eclipse | JIRA | MySQL | MongoDB <br>
+					</div>
 				</p>
-			</div>
-		</div>
-
-		<div class="container tab-pages" ng-show="tab.isSet(2)">
-			<div class="about-inner-container">
-				<div class="about-text-container col-md-4">
-					<p class="about-headers">The Basics</p>
-					<p class="about-text">
-						Age 21 years. San Francisco native.<br>
-						Interests include software engineering, web development/applications, mobile applications, human-computer interaction, and data analysis.
-					</p>
-
-					<p class="about-headers">The Education</p>
-					<p class="about-text">
-						Fourth Year. Computer Science. Economics.<br>
-						University of California, San Diego<br>
-						Est Graduation December 2016<br>
-						GPA: 3.39
-					</p>
+				<div class="col-lg-4 about-subinfo-container">
+					<span class="about-subinfo-title">EDUCATION</span> <br>
+					University of California, San Diego <br>
+					Expected Graduation: Dec 2016 <br>
+					Computer Science B.S.<br>
+					Economics B.A.<br>
 				</div>
-				<div class="about-text-container col-md-4">
-					<p class="about-headers">The Skills</p>
-					<p class="about-text">
-						<span class="about-text-headers">Languages Proficient In</span><br>
-						Java | HTML | CSS | JavaScript | SQL<br><br>
-						<span class="about-text-headers">Languages Experience With</span><br>
-						C | C++ | C# | Python | PHP<br><br>
-						<span class="about-text-headers">Other Experience</span><br>
-						Android | JSON | MEAN Stack<br><br>
-						<span class="about-text-headers">Tools</span><br>
-						Vim | Git | Eclipse | JUnit | JIRA | PostgreSQL | Visual Studio | SQL Server<br><br>
-						<span class="about-text-headers">Spoken Languages</span><br>
-						English (Fluent) | Cantonese (Native) | Mandarin (Limited) | Japanese (Intermediate)
-					</p>
+				<div class="col-lg-4 about-subinfo-container">
+					<span class="about-subinfo-title">INDUSTRY</span> <br>
+					<a style="color:blue" href="CSE197_Poster_Kenny_Li.pdf">VISA - Technical Analyst Intern</a><br>
+					Casa Pacifica ADHC - IT Contractor<br>
 				</div>
-				<div class="about-image-container col-md-4">
-					<img src="./images/kenny-solo.png" alt="Kenny">
-				</div>
-
-			</div>
-		</div>
-
-    	<div class="container tab-pages" ng-show="tab.isSet(3)">
-			Resume<br> Under construction -- check my <a href="http://www.linkedin.com/in/likenny/" target="_blank">LinkedIn</a>
-			for more information.
-
-			<p>In the meantime, checkout what I did at Visa this summer!</p>
-			<a href="CSE197_Poster_Kenny_Li.pdf">Visa Summer Internship</a>
-		</div>
-
-		<div class="container tab-pages" ng-show="tab.isSet(4)">
-			<div class="contact-inner-container">
-				<p class="contact-title">GET IN TOUCH</p>
-
-				<div class="contact-table-container">
-	  				<div class="contact-table">
-	   					<a href="mailto:k3li@ucsd.edu"><img src="./images/emailicon.png" 
-	   								 alt="k3li@ucsd.edu" width=50 height=50></a>
-	   				</div>
-	  				<div class="contact-table">	   				
-	   					<a href="mailto:likenny9@gmail.com"><img src="./images/gmailicon.png" 
-	   								 alt="likenny9@gmail.com" width=50 height=50></a>
-	   				</div>
-	  				<div class="contact-table">
-	   					<a href="http://www.github.com/likenny9" target="_blank">
-	   								 <img id="github-image" src="./images/githubicon.png" alt="Github" width=50 height=50></a>   
-	   				</div>
-	  				<div class="contact-table">        
-	   					<a href="http://www.linkedin.com/in/likenny/" target="_blank">
-	   								 <img src="./images/linkedinicon.png" alt="LinkedIn" width=50 height=50></a>
-	  				</div> 
-	   				<p style="margin-top: 10px">
-	   					UCSD Email<br> <a href="mailto:k3li@ucsd.edu">k3li@ucsd.edu</a><br> 
-	   					Gmail<br> <a href="mailto:likenny9@gmail.com">likenny9@gmail.com</a><br>
-	   					Github<br> <a href="http://www.github.com/likenny9" target="_blank">http://www.github.com/likenny9</a><br>
-	   					LinkedIn<br> <a href="http://www.linkedin.com/in/likenny" target="_blank">http://www.linkedin.com/in/likenny</a><br>
-	   				</p>                     
+				<div class="col-lg-4 about-subinfo-container">
+					<span class="about-subinfo-title">LEADERSHIP</span> <br>
+					Preuss School - IT Assistant <br>
+					CSE Department - Tutor <br>
+					Dragon Boat Team - Treasurer <br>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- Script dependencies -->
-		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/angular-1.3.15.min.js"></script>
-		<script src="js/js_main.js"></script>
+	<hr class="section-hr">
 
-		<!-- Google Analytics -->
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-44139944-2', 'auto');
-			ga('require', 'displayfeatures');
-			ga('send', 'pageview');
-		</script>
-	
-	</body>
+	<!-- Projects -->
+	<div class="container tab-pages projects-container">
+		<a class="section-anchors" name="projects"></a>
+		<div class="projects-inner-container inner-container">
+			<p class="heading-name">Projects</p>
+			<div class="col-md-6 projects-cols-container">
+				<div class="projects-box" id="savr-box" data-toggle="modal" data-target="#projects_savr_modal">SAVR</div>
+				<div class="projects-box" id="goal-box" data-toggle="modal" data-target="#projects_goal_modal">Goal Patrol</div>
+			</div>
+			<div class="col-md-6 projects-cols-container">
+				<div class="projects-box" id="meme-box" data-toggle="modal" data-target="#projects_meme_modal">MemeMaster</div>
+				<div class="projects-box" id="db-box" data-toggle="modal" data-target="#projects_db_modal">UCSD DB Website</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="projects_savr_modal" tabindex="-1" role="dialog" aria-labelledby="savr_modal_label">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="savr_modal_label">SAVR</h4>
+				</div>
+				<div class="modal-body">
+					<div class="modal-body">
+						<button class="btn"
+								onclick="alert('Sit tight! The link will be up shortly.')">
+							Discover the App
+						</button>
+						<br>
+						Savr is a mobile application that encourages users to reduce food waste and save money.
+						It keeps track of your fridge and helps you manage and reduce your waste.
+						<img class="modal-picture" src="img/projects/Savr/homescreen.png"> Overview <br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="projects_goal_modal" tabindex="-1" role="dialog" aria-labelledby="goal_modal_label">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="goal_modal_label">Goal Patrol</h4>
+				</div>
+				<div class="modal-body">
+					<button class="btn"
+							onclick="location.href='http://goalpatrol3.herokuapp.com/index'">
+						Discover the App
+					</button>
+					<br>
+					<p style="font-style: italic;">Inspire. Improve. Motivate.</p>
+					Goal Patrol is an application meant to facilitate communication between you, your friends,
+					and family members, who are your so-called "goal patrols".  By setting goals for each
+					other and monitoring your goal patrol's goals, you and your patrols can mutually benefit by
+					giving and receiving motivation.
+					<img class="modal-picture" src="img/projects/GoalPatrol/home.png"> Overview <br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="projects_meme_modal" tabindex="-1" role="dialog" aria-labelledby="meme_modal_label">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="meme_modal_label">Meme Master</h4>
+				</div>
+				<div class="modal-body">
+					<button class="btn"
+							onclick="location.href='http://acsweb.ucsd.edu/~k3li/personal/CSE134B/project-1-mememaster/project-1-mememaster/mememain.html'">
+						Discover the App
+					</button>
+					<br>
+					MemeMaster is a client-side application that allows you to upload images via drag and drop and create memes
+					from them using our meme maker.  You can upload your own memes or create them using the app!
+					<img class="modal-picture" src="img/projects/MemeMaster/overview.png"> Overview <br>
+					<img class="modal-picture" src="img/projects/MemeMaster/creator.png"> Create Meme <br>
+					<img class="modal-picture" src="img/projects/MemeMaster/editor.png"> Edit Meme Details <br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="projects_db_modal" tabindex="-1" role="dialog" aria-labelledby="db_modal_label">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="db_modal_label">UCSD Dragon Boat Website</h4>
+				</div>
+				<div class="modal-body">
+					<button class="btn"
+							onclick="location.href='http://www.ucsddragonboat.org/'">
+						Discover the Site
+					</button>
+					<br>
+					The UCSD Dragon Boat Team is a competitive dragon boat team at UC San Diego. Dragon Boat is an ancient
+					canoeing sport originating from an annual ethnic ritual in southern China, that later spread into a
+					competitive sport throughout the globe.  A dragon boat is a 40 foot canoe with 20 paddlers (2 per row),
+					a drummer, and a steersman.  This website was created to showcase UCSD Dragon Boat and to spread word
+					of dragon boat around the web.
+					<img class="modal-picture" src="img/projects/UCSDDB/ucsd_main.jpg"> Logo <br>
+					<img class="modal-picture" src="img/projects/UCSDDB/about.png"> Site Information <br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr class="section-hr">
+
+	<!-- Contact -->
+	<div class="container tab-pages contacts-container">
+		<a class="section-anchors" name="contact"></a>
+		<div class="contacts-inner-container inner-container">
+			<p class="heading-name">Contact</p>
+			<div class="contact-table">
+				<a href="mailto:likenny9@gmail.com"><img src="img/contact-icons/gmailicon.png"
+														 alt="likenny9@gmail.com" width=50 height=50></a>
+			</div>
+			<div class="contact-table">
+				<a href="http://www.github.com/likenny9" target="_blank">
+					<img id="github-image" src="img/contact-icons/githubicon.png" alt="Github" width=50 height=50></a>
+			</div>
+			<div class="contact-table">
+				<a href="http://www.linkedin.com/in/likenny/" target="_blank">
+					<img src="img/contact-icons/linkedinicon.png" alt="LinkedIn" width=50 height=50></a>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		&copy; 2016 Kenny Li
+	</div>
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-44139944-2', 'auto');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+	</script>
+</body>
 </html>
