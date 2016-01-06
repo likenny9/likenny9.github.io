@@ -38,7 +38,7 @@
 
 /***** BLANK DOCUMENT SETUP *****/
 * {
-  	font-family: QuicksandRegular;
+  	font-family: 'DrawnBody', Arial, Helvetica, sans-serif;
   	font-size: 1.05em;
   	color: #2B2B2B;
  	margin: 0;
@@ -192,7 +192,11 @@ body {
 /***** For All Pages *****/
 .tab-pages {
 	width: 100%;
-	height: 85vh;
+	height: auto;
+}
+
+.inner-container {
+	position: relative;
 }
 
 .section-anchors {
@@ -200,6 +204,19 @@ body {
 	position: relative;
 	top: -100px;
 	visibility: hidden;
+}
+
+.heading-name {
+	font-family: QuicksandBold;
+	margin-top: 25px;
+	font-weight: bold;
+	font-size: 45px;
+	color: #EEE;
+}
+
+.section-hr {
+	width: 50%;
+	margin-left: 25%;
 }
 
 @media (max-width: 768px) {
@@ -211,48 +228,51 @@ body {
 /***** Main *****/
 .home-container {
 	position: relative;
-	background-color: #87BF73;
+	background: #87BF73 url("../img/ski-effects-12.19.2015.jpg") no-repeat;
+	background-size: 100% 100%;
 	margin-top: 100px;
+	height: 100%;
 }
 
 .home-inner-container {
-
 }
 
 .home-name {
-	margin-top: 15px;
-	font-family: QuicksandBold;
-	font-weight: bold;
+	font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin-top: 100px;
+	font-size: 90px;
+	color: #EF7E17;
+}
+
+.home-subheading {
+	-font-weight: bold;
 	font-size: 40px;
+	color: #EF7E17;
+}
+
+#home-resume {
 	display: block;
+	margin: auto;
+	margin-top: 5px;
+	background-color: #EF7E17;
+	color: #2B2B2B;
+	border: 2px solid #2B2B2B;
+	width: 150px;
 }
 
-#terminal-panel {
-	display: block;
-	border-radius: 5px;
-	width: 60%;
-	margin: 10px auto;
-	padding-top: 15px;
-	background: #ccc;
-	height: 60vh;
-	text-align: left;
+#home-resume:hover {
+	background-color: #EEE;
 }
 
-#terminal-window {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	width: 100%;
-	padding: 40px;
-	height: 60vh;
-	margin: 0 auto;
-	background: #383737;
-	color: lime;
+@media (max-width: 768px) {
+	.home-name {
+		font-size: 70px;
+	}
 }
-
 
 /***** About *****/
 .about-container {
-	background-color: #DB6565;
+	-background-color: #DB6565;
 }
 
 .about-inner-container {
@@ -260,30 +280,32 @@ body {
 }
 
 #about-image-container {
-	width: 30vw;
-	height: 58vh;
+	-width: 30%;
+	-height: 50%;
 }
 
 #about-image {
-	width: 100%;
-	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 	margin-top: 2px;
-	border: 2px solid #2B2B2B;
-	border-radius: 10px;
 	z-index: 9000;
-}
-
-#about-resume {
-	display: block;
-	margin-top: 5px;
 }
 
 #about-description {
 	text-align: left;
 }
 
+#about-skills {
+	text-align: left;
+	font-size: 0.85em;
+}
+
+.about-text-headers {
+	font-family: QuicksandBold;
+}
+
 .about-subinfo-container {
-	margin-top: 85px;
+	margin-top: 50px;
 	font-size: 0.85em;
 }
 
@@ -292,10 +314,20 @@ body {
 	font-size: 1.5em !important;
 }
 
+@media (max-width: 1199px) {
+	.about-subinfo-container {
+		margin-top: 15px;
+	}
+
+	#about-skills {
+		text-align: center;
+	}
+}
+
 
 /***** Projects *****/
 .projects-container {
-	background-color: #50A1C8;
+	-background-color: #50A1C8;
 }
 
 .projects-cols-container {
@@ -355,7 +387,7 @@ body {
 
 /***** Contacts *****/
 .contacts-container {
-	background-color: #1ABC9C;
+	-background-color: #1ABC9C;
 }
 
 .contacts-inner-container {
@@ -364,7 +396,7 @@ body {
 
 .contact-table {
 	display: inline-block;
-	margin: 120px 20px;
+	margin: 70px 20px;
 	height: 75px;
 	width: 75px;
 }
@@ -382,6 +414,6 @@ body {
 	-ms-transform: scaleX(1.5) scaleY(1.5);
 	-o-transform: scaleX(1.5) scaleY(1.5);
 	transition: 1s background-color;
-	box-shadow: 0px 0px 30px #F4851C;
+	box-shadow: 0px 0px 30px #2B2B2B;
 	border-radius: 9px;
 }

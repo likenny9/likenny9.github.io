@@ -11,8 +11,8 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/css_main.css">
 
-	<link rel="shortcut icon" href="./img/PersonalLogoIv3.png">
-	<link rel="image_src" type="image/jpeg" href="img/kennyFB.jpg">
+	<link rel="shortcut icon" href="./img/PersonalLogo.png">
+	<link rel="image_src" type="image/jpeg" href="img/personal/kennyFB.jpg">
 
 	<!-- Script dependencies -->
 	<script src="js/jquery-1.11.1.min.js"></script>
@@ -28,7 +28,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top navbar-absolute">
 		<div class="container-fluid">
 			<a href="#top" id="logo-style">
-				<img id="logo-icon" src="img/PersonalLogoIv3.png">
+				<img id="logo-icon" src="img/PersonalLogo.png">
 			</a>
 			<ul class="nav navbar-nav">
 				<li>
@@ -40,7 +40,7 @@
 				<li>
 					<a href="#projects">
 						<img class="nav-icons" src="img/nav-icons/resumeicon.png">
-						<span class="nav-text">Resume</span>
+						<span class="nav-text">Projects</span>
 					</a>
 				</li>
 				<li>
@@ -56,41 +56,48 @@
 	<!-- Main -->
 	<div class="container tab-pages home-container">
 		<a class="section-anchors" name="top"></a>
-		<div class="home-inner-container">
+		<div class="home-inner-container inner-container">
 			<p class="home-name">KENNY LI</p>
-			<div id="terminal-panel">
-				<div id="terminal-window">
-					&gt; Computer Science B.S. and Economics B.A <br><br>
-					&gt; University of California, San Diego <br><br>
-					&gt; Graduating December 2016 <br><br>
-				</div>
-			</div>
+			<p class="home-subheading">User Focused. Developer.</p>
+			<a id="home-resume" class="btn btn-default" href="files/Resume-Kenny_Li.pdf" target="_blank">Resume</a>
 		</div>
 	</div>
 
 	<!-- About -->
 	<div class="container tab-pages about-container">
-		<a class="section-anchors" name="about"></a>
-		<div class="about-inner-container">
-			<p class="home-name">About</p>
-			<div class="col-md-2" id="about-image-container">
-				<img id="about-image" src="img/kenny-cogs.jpg" alt="Kenny">
-				<a id="about-resume" class="btn btn-default" href="files/Resume-Kenny_Li.pdf" target="_blank">\-/ Resume</a>
+		<a class="section-anchors" name="about" id="about"></a>
+		<div class="about-inner-container inner-container">
+			<p class="heading-name">About</p>
+			<div class="col-md-4" id="about-image-container">
+				<img id="about-image" src="img/personal/kenny-solo.png" alt="Kenny">
+
 			</div>
 			<div class="col-md-8">
+				<br>
 				<p id="about-description">I am interested in usability and bringing information to people more easily.
-				   I want to create simple, elegant products that will globally connect people through technology.</p>
+				   I want to create simple, elegant products that will globally connect people through technology.<br><br>
+
+					<div id="about-skills">
+						<span class="about-subinfo-title">SKILLS</span> <br>
+						<span class="about-text-headers">Languages Proficient In: </span>
+						Java | HTML | CSS | JavaScript (jQuery, Angular, Node) | SQL<br>
+						<span class="about-text-headers">Other Experience:</span>
+						Android | JSON | MEAN Stack | Rails<br>
+						<span class="about-text-headers">Tools:</span>
+						Vim | Git | IntelliJ | Eclipse | JIRA | MySQL | MongoDB <br>
+					</div>
+				</p>
 				<div class="col-lg-4 about-subinfo-container">
 					<span class="about-subinfo-title">EDUCATION</span> <br>
-					UC San Diego <br>
-					December 2016 <br>
-					Computer Science <br>
-					Economics <br>
+					University of California, San Diego <br>
+					Expected Graduation: Dec 2016 <br>
+					Computer Science B.S.<br>
+					Economics B.A.<br>
 				</div>
 				<div class="col-lg-4 about-subinfo-container">
 					<span class="about-subinfo-title">INDUSTRY</span> <br>
-					<a href="CSE197_Poster_Kenny_Li.pdf">Visa Inc 06/2015 - 09/2015</a><br>
-					Casa Pacifica ADHC 10/2014 - P<br>
+					<a style="color:blue" href="CSE197_Poster_Kenny_Li.pdf">VISA - Technical Analyst Intern</a><br>
+					Casa Pacifica ADHC - IT Contractor<br>
 				</div>
 				<div class="col-lg-4 about-subinfo-container">
 					<span class="about-subinfo-title">LEADERSHIP</span> <br>
@@ -102,11 +109,13 @@
 		</div>
 	</div>
 
+	<hr class="section-hr">
+
 	<!-- Projects -->
 	<div class="container tab-pages projects-container">
 		<a class="section-anchors" name="projects"></a>
-		<div class="projects-inner-container">
-			<p class="home-name">Projects</p>
+		<div class="projects-inner-container inner-container">
+			<p class="heading-name">Projects</p>
 			<div class="col-md-6 projects-cols-container">
 				<div class="projects-box" id="savr-box" data-toggle="modal" data-target="#projects_savr_modal">SAVR</div>
 				<div class="projects-box" id="goal-box" data-toggle="modal" data-target="#projects_goal_modal">Goal Patrol</div>
@@ -221,24 +230,41 @@
 		</div>
 	</div>
 
+	<hr class="section-hr">
+
 	<!-- Contact -->
 	<div class="container tab-pages contacts-container">
 		<a class="section-anchors" name="contact"></a>
-		<div class="contacts-inner-container">
-			<p class="home-name">Contact</p>
+		<div class="contacts-inner-container inner-container">
+			<p class="heading-name">Contact</p>
 			<div class="contact-table">
 				<a href="mailto:likenny9@gmail.com"><img src="img/contact-icons/gmailicon.png"
-														 alt="likenny9@gmail.com" width=50 height=50>Gmail</a>
+														 alt="likenny9@gmail.com" width=50 height=50></a>
 			</div>
 			<div class="contact-table">
 				<a href="http://www.github.com/likenny9" target="_blank">
-					<img id="github-image" src="img/contact-icons/githubicon.png" alt="Github" width=50 height=50>Github</a>
+					<img id="github-image" src="img/contact-icons/githubicon.png" alt="Github" width=50 height=50></a>
 			</div>
 			<div class="contact-table">
 				<a href="http://www.linkedin.com/in/likenny/" target="_blank">
-					<img src="img/contact-icons/linkedinicon.png" alt="LinkedIn" width=50 height=50>LinkedIn</a>
+					<img src="img/contact-icons/linkedinicon.png" alt="LinkedIn" width=50 height=50></a>
 			</div>
 		</div>
 	</div>
+
+	<div>
+		&copy; 2016 Kenny Li
+	</div>
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-44139944-2', 'auto');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>

@@ -12,6 +12,22 @@ $(document).ready(function() {
         return false;
     });
 
+    //Add horizontal line under nav bar after scrolling past home section
+    var hrAdded = false;
+    $(window).on('scroll',function() {
+        var scrolltop = $(this).scrollTop();
+        var $about = $('#about');
+
+        if ((scrolltop >= $about.offset().top + $about.height() - 2) && !hrAdded) {
+            $('.container-fluid').after('<hr style="margin: 0">');
+            hrAdded = true;
+        }
+        else if ((scrolltop < $about.offset().top + $about.height() - 2) && hrAdded) {
+            $('.container-fluid + hr').remove();
+            hrAdded = false;
+        }
+    });
+
 });
 
 //Angular
